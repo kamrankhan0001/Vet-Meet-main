@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaWhatsapp } from 'react-icons/fa'; 
-import flag from '../assets/Logos/Flag_of_India.png';
+import flag from '../assets/Logos/flag.png';
 
 
 
