@@ -11,7 +11,7 @@ import ReturnPolicyPage from "./pages/ReturnPolicyPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsOfUsePage from "./pages/TermsOfUsePage";
 import ReferAndSavePage from "./pages/ReferAndSavePage";
-import ReferralSuccessPage from "./pages/referralSuccessPage";
+import ReferralSuccessPage from "./pages/ReferralPage";
 import OutStoryPage from "./pages/OurStoryPage";
 import Tip1 from "./assets/Health/HealthTip1.png";
 import Tip2 from "./assets/Health/HealthTip2.png";
