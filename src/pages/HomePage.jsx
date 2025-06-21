@@ -9,20 +9,24 @@ import Footer from "../Components/Footer";
 import DogBreeds from "../Components/DogBreeds";
 import PetBrands from "../Components/PetBrands";
 import SingleBanner from "../Components/SingleBanner";
+import PetSuppliesSection from "../Components/PetSupplies";
+import SecondBanner from "../Components/SecondBanner";
+import ToysProducts from "../Components/ToysProducts";
 
 const HomePage = () => {
   return (
     <>
-      <BannerSection />
-      
+      <BannerSection />     
       <PetBrands />
       <CategoriesGrid />
+      <SecondBanner />
       <DogBreeds />
       <HealthProducts />
       <SingleBanner />
       <PetFoodList />
-      <HealthTipsSection />
-      <PetFoodList /> 
+      <ToysProducts />
+      <HealthTipsSection />     
+      <PetSuppliesSection /> 
       <Footer />
       
     </>

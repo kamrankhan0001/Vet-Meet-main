@@ -69,7 +69,7 @@ const HealthTipsSection = () => {
             
             <Link
               to={`/health-tips/${createSlug(article.title)}`} 
-              className="inline-block mt-2 bg-orange-300 hover:bg-orange-600 text-white px-4 py-2 rounded-full"
+              className="inline-block mt-2 bg-orange-400 hover:bg-blue-600 text-white px-4 py-2 rounded-full"
             >
               {article.button}
             </Link>
@@ -86,3 +86,4 @@ const HealthTipsSection = () => {
 };
 
 export default HealthTipsSection;
+

@@ -8,6 +8,7 @@ import image4 from "../assets/banner/image4.png";
 import image5 from "../assets/banner/image5.png";
 import image6 from "../assets/banner/image6.png";
 import image7 from "../assets/banner/image7.png";
+//import a1 from "../assets/banner/a1.jpeg";
 
 function BannerSection() {
   const banners = [image1, image2, image3, image4, image5, image6, image7];
@@ -43,12 +44,15 @@ function BannerSection() {
   });
 
   return (
-    <div className="relative" {...handlers}>
+
+   <div className="relative" {...handlers}>
       {/* Banner image */}
       <div
         className="w-full h-48 sm:h-72 md:h-96 bg-contain bg-center mt-5 bg-no-repeat"
         style={{ backgroundImage: `url(${banners[currentIndex]})` }}
       >
+    
+    
         {/* Navigation Buttons */}
         <div className="absolute inset-0 flex justify-between items-center px-4">
           {/* Previous Button */}
@@ -115,3 +119,6 @@ function BannerSection() {
 }
 
 export default BannerSection;
+
+
+

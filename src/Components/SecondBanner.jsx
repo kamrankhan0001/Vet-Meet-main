@@ -1,6 +1,6 @@
 import React from "react";
-import desktopImage from "../assets/banner/FEED.png";
-import mobileImage from "../assets/banner/MFEED.png";
+import a1 from "../assets/banner/a1.jpeg"; 
+import a2 from "../assets/banner/a2.jpeg"; 
 
 
 const SingleBanner = () => {
@@ -12,16 +12,20 @@ const SingleBanner = () => {
 
       {/* Mobile Image */}
       <img
-        src={mobileImage}
+        src={a2}
         alt="Mobile Banner"
         className="block md:hidden w-full h-full object-cover px-2"
+        loading="lazy"
+        style={{ objectFit: "cover" }}
       />
 
       {/* Desktop Image */}
       <img
-        src={desktopImage}
+        src={a1}
         alt="Desktop Banner"
         className="hidden md:block w-full h-full object-contain px-4"
+        loading="lazy"
+        style={{ objectFit: "contain" }}
       />
       
 

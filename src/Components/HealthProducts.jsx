@@ -1,44 +1,74 @@
 import React from "react";
 import health1 from "../assets/Health/Health1.png";
-import health2 from "../assets/Health/Health2.png";
+import health9 from "../assets/Health/Health9.png";
 import health3 from "../assets/Health/Health3.png";
-import health4 from "../assets/Health/Health4.png";
-import health5 from "../assets/Health/Health5.png";
-import health6 from "../assets/Health/Health6.png";
-import health7 from "../assets/Health/Health7.png";
+import health11 from "../assets/Health/Health11.png";
+import health10 from "../assets/Health/Health10.png";
+import health12 from "../assets/Health/Health12.png";
+import health8 from "../assets/Health/Health8.png";
+import heath13 from "../assets/Health/Health13.png";
+
 
 const healthcareItems = [
-  { title: "Vitamins", image: health1 },
-  { title: "Supplements", image: health2 },
-  { title: "First Aid", image: health3 },
-  { title: "Skin Care", image: health4 },
-  { title: "Joint Care", image: health5 },
-  { title: "Eye & Ear Care", image: health6 },
-  { title: "Dental Care", image: health7 },
+  { title: "Dewormer", image: health1, discount: "20% off" },
+  { title: "Tick & fleas", image: health9, discount: "20% off" },
+  { title: "Skin & coat", image: health3, discount: "20% off" },
+  { title: "Joint care", image: health11, discount: "10% off" },
+  { title: "Gut health", image: health10, discount: "20% off" },
+  { title: "Supplements", image: health12, discount: "50% off" },
+  { title: "Eye care", image: health8, discount: "10% off" },
+  { title: "Oral care", image: heath13, discount: "5% off" },
 ];
 
 const HealthProducts = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-10">
-      <h2 className="text-4xl font-bold mb-6 text-center">Healthcare</h2>
-      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-2 md:gap-6">
-        {healthcareItems.map((item, index) => (
-          <div
-            key={index}
-            className={`overflow-hidden hover:scale-105 transition-transform duration-200 ${
-              index === 6 ? "hidden sm:block" : ""
-            }`}
-          >
-            <img
-              src={item.image}
-              alt={item.title}
-              className="w-full h-50 object-cover rounded-2xl"
-            />
-            <div className="p-2 text-center">
-              <p className="text-sm font-bold font-serif">{item.title}</p>
+    <div className="bg-green-200 py-10">
+      {/* Header Section */}
+      <div className="text-center px-4">
+        <h2 className="text-5xl font-extrabold text-green-900 mb-2">Pharmacy Store</h2>
+        <p className="inline-block bg-blue-500 text-white font-semibold text-3xl px-4 py-1 rounded-lg">
+          Up to 50% off
+        </p>
+        <p className="text-sm text-gray-700 mt-1">co-powered by <span className="font-semibold text-black">Vivaldis</span></p>
+      </div>
+
+      {/* Horizontal Scroll Product Cards */}
+      <div className="mt-10 overflow-x-auto px-4">
+        <div className="flex gap-5 md:gap-8 w-max">
+          {healthcareItems.map((item, index) => (
+            <div
+              key={index}
+              className="relative w-[200px] min-w-[200px] bg-white rounded-2xl shadow-md p-4 flex-shrink-0 hover:shadow-xl transition duration-300"
+            >
+              {/* Discount Badge */}
+              <span className="absolute top-1 left-3 bg-gray-800 text-white text-xs font-semibold px-2 py-0.5 rounded-md shadow-sm">
+                {item.discount}
+              </span>
+
+              {/* Product Image */}
+              <div className="h-44 flex items-center justify-center mb-2">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="max-h-[200%] object-contain"
+                  loading="lazy"
+                />
+              </div>
+
+              {/* Product Title */}
+              <p className="text-center text-base font-semibold text-black">
+                {item.title}
+              </p>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+      </div>
+
+      {/* CTA Button */}
+      <div className="text-center mt-10">
+        <button className="bg-orange-500 hover:bg-orange-600 text-white text-md font-semibold px-6 py-2 rounded-full shadow-md transition">
+          Shop Now 
+        </button>
       </div>
     </div>
   );

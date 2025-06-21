@@ -1,0 +1,58 @@
+import React from 'react'; 
+import supply1 from '../assets/supplies/supply1.png';
+import supply2 from '../assets/supplies/supply2.png';
+import supply3 from '../assets/supplies/supply3.png';
+import supply4 from '../assets/supplies/supply4.png';
+import a1 from '../assets/banner/a1.jpeg'; 
+
+const PetSuppliesSection = () => {
+  const items = [
+    {
+      image: supply1,
+      title: '24hr Delivery',
+      subtitle: 'In 24 cities',
+    },
+    {
+      image: supply2,
+      title: '50,000+',
+      subtitle: 'Happy pet parents',
+    },
+    {
+      image: supply3,
+      title: 'Complimentary vet consult',
+      subtitle: 'For every new member',
+    },
+    {
+      image: supply4,
+      title: 'Pet Pharmacy',
+      subtitle: 'Exclusive',
+    },
+  ];
+
+  return (
+    
+    <section className="bg-lime-100 py-6 px-4 sm:px-6 lg:px-20 mt-5">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 place-items-center">
+        {items.map((item, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center text-center w-full max-w-[160px] sm:max-w-[180px]"
+          >
+            <img
+              src={item.image}
+              alt={item.title}
+              className="w-14 h-14 object-contain mb-3"
+            />
+            <p className="text-lime-800 text-sm font-bold">{item.title}</p>
+            <p className="text-lime-700 text-xs">{item.subtitle}</p>
+          </div>
+        ))}
+      </div>
+     
+    </section>
+    
+  );
+};
+
+export default PetSuppliesSection;
+

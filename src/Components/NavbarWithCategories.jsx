@@ -345,7 +345,7 @@ export default function NavbarWithCategories() {
               <line x1="3" y1="18" x2="21" y2="18" />
             </svg>
           </button>
-          <h1 className="text-lg font-bold text-white">Vet&Meet</h1>
+          <h1 className="text-2xl font-bold text-white">Vet&Meet</h1>
         </div>
 
         {/* Middle: Search */}
@@ -368,26 +368,26 @@ export default function NavbarWithCategories() {
 
         {/* Right: Action Buttons */}
         <div className="flex justify-around w-full md:w-auto space-x-6 md:space-x-4">
-          <button onClick={toggleLoginModal} className="flex flex-col items-center text-sm text-white hover:text-black cursor-pointer">
+          <button onClick={toggleLoginModal} className="flex flex-col items-center text-lg text-white hover:text-black cursor-pointer">
 
             <FaUser className="text-xl" />
             <span>Profile</span>
           </button>
           <button
             onClick={toggleModal}
-            className="flex flex-col items-center text-sm text-white hover:text-black cursor-pointer relative"
+            className="flex flex-col items-center text-lg text-white hover:text-black cursor-pointer relative"
           >
             <FaMapMarkerAlt className="text-xl" />
             <span>Delivery</span>
           </button>
           <a
             href="tel:+18001026886"
-            className="flex flex-col items-center text-sm text-white hover:text-black"
+            className="flex flex-col items-center text-lg text-white hover:text-black"
           >
             <FaPhoneAlt className="text-xl" />
             <span>Call</span>
           </a>
-          <button className="flex flex-col items-center text-sm text-white hover:text-black relative cursor-pointer">
+          <button className="flex flex-col items-center text-lg text-white hover:text-black relative cursor-pointer">
             <FaShoppingCart className="text-xl" />
             <span>Cart</span>
             <span className="absolute top-0 right-0 text-xs bg-red-500 text-white rounded-full px-1">
@@ -397,15 +397,15 @@ export default function NavbarWithCategories() {
         </div>
       </div>
 
-      {/* CATEGORY NAV - DESKTOP - STICKY HOVERABLE DROPDOWNS */}
+      
       <nav className="bg-white shadow-md sticky top-0 z-50 hidden md:block">
         <div className="max-w-[1400px] mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex space-x-15 text-gray-800 font-medium relative mx-25 ">
+          <div className="flex space-x-14 text-gray-800 font-medium relative mx-25 ">
             {categories.map((cat, index) => (
               <div key={index} className="relative group">
-                <button className="hover:text-blue-600">{cat.name}</button>
+                <button className="hover:text-blue-600 text-xl font-bold">{cat.name}</button>
 
-                {/* Mega Menu only for Cats, Dogs, Pharmacy */}
+               
                 {["Cats", "Dogs", "Pharmacy"].includes(cat.name) &&
                   cat.subCategories?.length > 0 && (
                     <div className="absolute left-0 top-full w-[1150px] h-[500px] bg-white border-t border-gray-200 shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-50 overflow-y-auto rounded-lg">
