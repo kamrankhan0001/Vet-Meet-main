@@ -73,6 +73,7 @@ const PetFoodList = () => {
                 src={item.image}
                 alt={item.title} 
                 className="w-[100px] h-[100px] object-cover rounded-full mx-auto mb-3 border-4 border-pink-200"
+                loading="lazy"
               />
 
               {/* Title */}
