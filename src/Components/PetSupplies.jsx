@@ -1,8 +1,8 @@
 import React from 'react'; 
-import supply1 from '../assets/supplies/supply1.png';
-import supply2 from '../assets/supplies/supply2.png';
-import supply3 from '../assets/supplies/supply3.png';
-import supply4 from '../assets/supplies/supply4.png';
+import supply1 from '../assets/Supplies/supply1.png';
+import supply2 from '../assets/Supplies/supply2.png';
+import supply3 from '../assets/Supplies/supply3.png';
+import supply4 from '../assets/Supplies/supply4.png';
 import a1 from '../assets/banner/a1.jpeg'; 
 
 const PetSuppliesSection = () => {
