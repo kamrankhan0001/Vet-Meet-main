@@ -397,10 +397,11 @@ export default function NavbarWithCategories() {
         </div>
       </div>
 
-      
+      {/* CATEGORY NAVBAR - DESKTOP */}
+
       <nav className="bg-white shadow-md sticky top-0 z-50 hidden md:block">
         <div className="max-w-[1400px] mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex space-x-14 text-gray-800 font-medium relative mx-25 ">
+          <div className="flex space-x-12 text-gray-800 font-medium relative mx-25 ">
             {categories.map((cat, index) => (
               <div key={index} className="relative group">
                 <button className="hover:text-blue-600 text-xl font-bold">{cat.name}</button>
