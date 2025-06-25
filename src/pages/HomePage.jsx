@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, {useEffect} from "react";
 import BannerSection from "../Components/BannerSection"; 
 import CategoriesGrid from "../Components/CategoriesGrid";
 import HealthProducts from "../Components/HealthProducts";
@@ -14,6 +14,11 @@ import SecondBanner from "../Components/SecondBanner";
 import ToysProducts from "../Components/ToysProducts";
 
 const HomePage = () => {
+  // window.scrollTo(0, 0); // Scroll to top on page load
+  useEffect(() => {
+    window.scrollTo(0, 0, { behavior: 'smooth' });
+  }, []);
+
   return (
     <>
       <BannerSection />     

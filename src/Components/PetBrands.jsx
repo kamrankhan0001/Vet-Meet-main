@@ -9,8 +9,10 @@ import image5 from "../assets/Brands/brand5.png";
 import image6 from "../assets/Brands/brand6.png";
 import image7 from "../assets/Brands/brand7.png";
 import image8 from "../assets/Brands/brand8.png";
+import image9 from "../assets/Brands/brand9.png";
+import image10 from "../assets/Brands/brand10.png";
 
-function PetBrands() {
+const PetBrands = () => {
   const products = [
     { id: 1, image: image1 },
     { id: 2, image: image2 },
@@ -20,28 +22,30 @@ function PetBrands() {
     { id: 6, image: image6 },
     { id: 7, image: image7 },
     { id: 8, image: image8 },
+    { id: 9, image: image9 },
+    { id: 10, image: image10 },
   ];
 
   return (
-    <div className="overflow-x-auto bg-[#f7fafc] py-10 px-4 md:px-6 lg:px-6">
-      <h2 className="text-center font-extrabold text-3xl md:text-4xl text-gray-800 font-[Gotham Rounded] mb-8">
-        Brands in Focus
+    <div className="bg-white py-10 px-4 md:px-10">
+      <h2 className="text-center font-bold text-3xl md:text-4xl text-gray-900 mb-8">
+        Brands in focus
       </h2>
 
-      <div className="flex gap-4 overflow-x-auto whitespace-nowrap px-4 md:px-10 py-2 mx-0.5 md:mx-2">
+      <div className="flex gap-3 overflow-x-auto scrollbar-hide">
         {products.map((product, index) => (
           <motion.div
             key={product.id}
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.15 }}
-            whileHover={{ scale: 1.05 }}
-            className="w-[230px] h-[230px] flex-shrink-0 bg-white shadow-md hover:shadow-xl transition-shadow duration-300 rounded-2xl p-3"
+            transition={{ duration: 0.4, delay: index * 0.1 }}
+            whileHover={{ scale: 1.03 }}
+            className="w-[180px] h-[240px] flex-shrink-0 border-[6px] border-orange-400 rounded-[30px] bg-white shadow-md overflow-hidden"
           >
             <img
               src={product.image}
               alt={`Brand ${product.id}`}
-              className="w-full h-auto object-contain rounded-2xl"
+              className="w-full h-full object-cover rounded-[26px]"
               loading="lazy"
             />
           </motion.div>
@@ -49,6 +53,10 @@ function PetBrands() {
       </div>
     </div>
   );
-}
+};
 
 export default PetBrands;
+
+
+
+

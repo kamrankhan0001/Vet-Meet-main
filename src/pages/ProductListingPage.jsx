@@ -8,8 +8,6 @@ import product6 from '../assets/Products/product6.png';
 import product7 from '../assets/Products/product7.png';
 import product8 from '../assets/Products/product8.png'; 
 
-
-
 // Placeholder for product data
 const products = [
   {

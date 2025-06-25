@@ -26,11 +26,11 @@ function BannerSection() {
     );
   };
 
-  // Auto play every 3 seconds
+  // Auto play every 8 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       nextBanner();
-    }, 3000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, []); // Run once on mount

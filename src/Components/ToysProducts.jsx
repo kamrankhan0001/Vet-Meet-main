@@ -21,7 +21,7 @@ const toyItems = [
 
 const ToysProducts = () => {
   return (
-    <div className="bg-blue-100 py-10">
+    <div className="bg-orange-100 py-10">
       {/* Header Section */}
       <div className="text-center px-4">
         <h1 className="text-5xl font-extrabold text-green-900 mb-2">Toys Sale</h1>
@@ -35,7 +35,7 @@ const ToysProducts = () => {
 
       {/* Scrollable Cards */}
       <div className="mt-10 overflow-x-auto px-4">
-        <div className="flex gap-3 md:gap-8 w-max">
+        <div className="flex gap-3 md:gap-4 w-max">
           {toyItems.map((item, index) => (
             <div
               key={index}
@@ -47,7 +47,7 @@ const ToysProducts = () => {
               </span>
 
               {/* Product Image */}
-              <div className="h-36 flex items-center justify-center mb-6">
+              <div className="h-40 flex items-center justify-center mb-6">
                 <img
                   src={item.image}
                   alt={item.title}

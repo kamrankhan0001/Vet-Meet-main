@@ -22,7 +22,7 @@ const healthcareItems = [
 
 const HealthProducts = () => {
   return (
-    <div className="bg-green-200 py-10">
+    <div className="bg-cyan-50 py-10">
       {/* Header Section */}
       <div className="text-center px-4">
         <h2 className="text-5xl font-extrabold text-green-900 mb-2">Pharmacy Store</h2>
