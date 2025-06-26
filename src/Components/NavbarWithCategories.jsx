@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import VetAndMeetPage from "../pages/VetAndMeetPage"; // Adjust the path as needed
 import {
   FaUser,
   FaShoppingCart,
@@ -8,7 +9,7 @@ import {
 
 
 import LoginWithOTP from "../pages/ProfilePage"; 
-
+import { useNavigate } from 'react-router-dom';
 
 const categories = [
   {
@@ -275,7 +276,14 @@ const categories = [
   { name: "Henlo", subCategories: ["Bird Feed", "Accessories"] },
 
   { name: "Shop By Breed", subCategories: ["Labrador", "Persian Cat"] },
-  { name: "Consult a Vet", subCategories: [{ name: "Book Appointment", action: "openBookAppointmentModal" }, "Online Chat"] },
+  { 
+    name: "Consult a Vet",
+    subCategories: [
+      
+    { name: "Book Appointment", path: "/consult-a-vet?action=book" }, 
+    { name: "Online Chat", path: "/consult-a-vet?action=chat" } 
+] 
+ },
   { name: "Vet&Meet Clinic ", subCategories: ["Health Plans", "Checkups"] },
   { name: "Summer Sale", subCategories: ["Discounted Items", "Bundles"] },
 ];
@@ -286,6 +294,7 @@ export default function NavbarWithCategories() {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [openIndex, setOpenIndex] = useState(null);
+  const navigate = useNavigate();
 
   const toggleModal = () => setShowModal(!showModal);
   const toggleAppointmentModal = () =>
@@ -307,16 +316,24 @@ export default function NavbarWithCategories() {
 
  
   const handleSubCategoryClick = (item) => {
-    if (typeof item === "object" && item.action === "openBookAppointmentModal") {
-      toggleAppointmentModal();
-      setDrawerOpen(false); 
+    if (typeof item === "object") {
+      if (item.name === "Book Appointment" && item.action === "openBookAppointmentModal") {
+         // This is for opening the modal directly from a specific sub-category click
+         toggleAppointmentModal();
+         setDrawerOpen(false);
+      } else if (item.path) { // If a sub-category has a path, navigate there
+        navigate(item.path);
+        setDrawerOpen(false); // Close the drawer after navigation
+      } else {
+        console.log(`Clicked on object: ${item.name}`);
+        setDrawerOpen(false);
+      }
     } else {
-      
-      console.log(`Clicked on: ${item}`);
-      setDrawerOpen(false); 
+      // This handles plain string sub-categories
+      console.log(`Clicked on string: ${item}`);
+      setDrawerOpen(false);
     }
   };
-
   return (
     <>
       {/* TOP NAVBAR */}
@@ -404,7 +421,19 @@ export default function NavbarWithCategories() {
           <div className="flex space-x-12 text-gray-800 font-medium relative mx-25 ">
             {categories.map((cat, index) => (
               <div key={index} className="relative group">
-                <button className="hover:text-blue-600 text-xl font-bold">{cat.name}</button>
+                {/* If the main category itself should navigate to the base page */}
+    {cat.name === "Consult a Vet" ? (
+      <button
+        onClick={() => navigate("/consult-a-vet")} // Direct navigation for "Consult a Vet"
+        className="hover:text-blue-600 text-xl font-bold"
+      >
+        {cat.name}
+      </button>
+    ) : (
+      <button className="hover:text-blue-600 text-xl font-bold">
+        {cat.name}
+      </button>
+    )}
 
                
                 {["Cats", "Dogs", "Pharmacy"].includes(cat.name) &&
@@ -504,78 +533,6 @@ export default function NavbarWithCategories() {
         </div>
       )}
 
-      {/* BOOK APPOINTMENT MODAL */}
-      {showAppointmentModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
-          <div className="bg-white p-6 rounded-md w-96">
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-lg font-medium">Book Your Appointment</h2>
-              <button
-                onClick={toggleAppointmentModal}
-                className="text-red-500 text-xl"
-              >
-                &times;
-              </button>
-            </div>
-            <form>
-              <div className="mb-4">
-                <label
-                  htmlFor="fullName"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  id="fullName"
-                  name="fullName"
-                  placeholder="Your Full Name"
-                  className="mt-1 w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500"
-                  required
-                />
-              </div>
-              <div className="mb-4">
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="your.email@example.com"
-                  className="mt-1 w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500"
-                  required
-                />
-              </div>
-              <div className="mb-4">
-                <label
-                  htmlFor="mobileNumber"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Mobile Number
-                </label>
-                <input
-                  type="tel"
-                  id="mobileNumber"
-                  name="mobileNumber"
-                  placeholder="e.g., 9876543210"
-                  className="mt-1 w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500"
-                  required
-                />
-              </div>
-              <button
-                type="submit"
-                className="mt-4 w-full bg-orange-500 text-white py-2 rounded-md hover:bg-orange-600 transition duration-200"
-              >
-                Schedule Appointment
-              </button>
-            </form>
-          </div>
-        </div>
-      )}
 
       {/* LOGIN WITH OTP MODAL */}
       {showLoginModal && <LoginWithOTP onClose={toggleLoginModal} />}
