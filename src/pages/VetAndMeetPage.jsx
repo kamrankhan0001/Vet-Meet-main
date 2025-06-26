@@ -6,6 +6,51 @@ const VetAndMeetPage = ({ toggleAppointmentModal }) => {
   const [veterinarians, setVeterinarians] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleAccordion = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+  
+
+  const moreFaqs = [
+    {
+      question: 'What can I expect from Vet&Meet online vet consultation?',
+      answer: 'You can expect expert advice, detailed diagnosis, and guidance on next steps for your pet.'
+    },
+    {
+      question: 'What happens after consultation with the vet?',
+      answer: 'You will receive a summary and any necessary prescriptions or follow-up steps.'
+    },
+    {
+      question: "Can online vet consultations diagnose my pet's condition accurately?",
+      answer: 'Yes, for common and visible symptoms. For complex cases, an in-person visit may be recommended.'
+    },
+    {
+      question: 'Can I get a second opinion through an online veterinary consultation?',
+      answer: 'Yes, second opinions are available from different veterinarians.'
+    },
+    {
+      question: 'I have a minor query to ask the doctor. Do I still have to book a consultation?',
+      answer: 'Yes, even minor queries require booking to ensure professional attention and record-keeping.'
+    },
+    {
+      question: 'My pet is difficult to handle. How will I medicate it at home?',
+      answer: 'Vets can guide you with step-by-step methods and recommend suitable techniques or aids.'
+    },
+    {
+      question: 'Are online veterinary consultations suitable for behavioural issues in pets?',
+      answer: 'Yes, they are often ideal for behavioral assessments and advice.'
+    },
+    {
+      question: 'Is online veterinary consultation available for all pets?',
+      answer: 'Yes, most common pets like dogs, cats, rabbits, and birds are covered.'
+    },
+    {
+      question: 'Are veterinary consultations covered by pet insurance?',
+      answer: 'Some insurers do cover online consultations. Please check with your provider.'
+    }
+  ];
 
   useEffect(() => {
     const fetchDoctors = async () => {
@@ -157,6 +202,52 @@ const VetAndMeetPage = ({ toggleAppointmentModal }) => {
           </button>
         </div>
       </section>
+
+    <section style={{ padding: '50px 20px' }}>
+        <h2 style={{ textAlign: 'center', marginBottom: '30px', fontSize: '2rem' }}>More Questions</h2>
+        <div style={{ maxWidth: '1400px', margin: 'auto' }}>
+          {moreFaqs.map((item, i) => (
+            <div
+              key={i}
+              onClick={() => toggleAccordion(i)}
+              style={{
+                background: '#fff',
+                padding: '15px 20px',
+                borderBottom: '1px solid #eee',
+                borderRadius: '8px',
+                marginBottom: '10px',
+                boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+                cursor: 'pointer'
+              }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <span>{item.question}</span>
+                <span
+                  style={{
+                    background: '#e0f7f4',
+                    color: '#00897b',
+                    borderRadius: '50%',
+                    width: '28px',
+                    height: '28px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontWeight: 'bold',
+                    fontSize: '1.2rem'
+                  }}
+                >
+                  {openIndex === i ? '-' : '+'}
+                </span>
+              </div>
+              {openIndex === i && (
+                <div style={{ marginTop: '10px', color: '#555' }}>{item.answer}</div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      
     </div>
   );
 };
