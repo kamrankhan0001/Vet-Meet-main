@@ -32,7 +32,7 @@ const PetBrands = () => {
         Brands in focus
       </h2>
 
-      <div className="flex gap-3 overflow-x-auto scrollbar-hide">
+      <div className="flex gap-3 overflow-x-auto scrollbar-hide"> 
         {products.map((product, index) => (
           <motion.div
             key={product.id}

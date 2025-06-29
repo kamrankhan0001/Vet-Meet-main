@@ -21,7 +21,7 @@ const toyItems = [
 
 const ToysProducts = () => {
   return (
-    <div className="bg-orange-100 py-10">
+    <div className="bg-blue-100 py-10">
       {/* Header Section */}
       <div className="text-center px-4">
         <h1 className="text-5xl font-extrabold text-green-900 mb-2">Toys Sale</h1>
@@ -34,7 +34,7 @@ const ToysProducts = () => {
       </div>
 
       {/* Scrollable Cards */}
-      <div className="mt-10 overflow-x-auto px-4">
+      <div className="mt-10 overflow-x-auto px-4 scrollbar-hide">
         <div className="flex gap-3 md:gap-4 w-max">
           {toyItems.map((item, index) => (
             <div

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-amber-400 text-black py-10 my-2">
+    <footer className="bg-amber-400 text-black py-10 my-2 ">
       <div className="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {/* Online Shopping */}
         <div>
@@ -127,7 +127,7 @@ const Footer = () => {
       </div>
 
       {/* Popular Searches */}
-      <div className="px-4 mt-10 max-w-full overflow-x-hidden">
+      <div className="px-4 mt-10 max-w-full overflow-x-hidden overflow-y-hidden">
         <h2 className="text-xl sm:text-2xl font-semibold mb-4">
           Popular Searches
         </h2>

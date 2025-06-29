@@ -224,8 +224,8 @@ const VetAndMeetPage = ({ toggleAppointmentModal }) => {
                 <span>{item.question}</span>
                 <span
                   style={{
-                    background: '#e0f7f4',
-                    color: '#00897b',
+                    background: 'orange',
+                    color: 'white',
                     borderRadius: '50%',
                     width: '28px',
                     height: '28px',
@@ -233,7 +233,7 @@ const VetAndMeetPage = ({ toggleAppointmentModal }) => {
                     alignItems: 'center',
                     justifyContent: 'center',
                     fontWeight: 'bold',
-                    fontSize: '1.2rem'
+                    fontSize: '1.4rem'
                   }}
                 >
                   {openIndex === i ? '-' : '+'}

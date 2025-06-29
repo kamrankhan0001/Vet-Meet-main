@@ -98,9 +98,9 @@ const App = () => {
       {/* BOOK APPOINTMENT MODAL - Moved here to be controlled by App's state */}
       {showAppointmentModal && (
         <div className="fixed inset-0 bg-black/50 bg-opacity-70 flex justify-center items-center z-50">
-          <div className="bg-black p-6 rounded-md w-96">
+          <div className="bg-blue-400 p-6 rounded-md w-96">
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-white font-bold">Book Your Appointment</h2>
+              <h2 className="text-black font-bold">Book Your Appointment</h2>
               <button
                 onClick={toggleAppointmentModal}
                 className="text-white text-xl cursor-pointer"
@@ -108,60 +108,45 @@ const App = () => {
                 &times;
               </button>
             </div>
-            <form>
+            <form className="align-center justify-center items-center">
               <div className="mb-4">
-                <label
-                  htmlFor="fullName"
-                  className="block text-sm font-medium text-white"
-                >
-                  Full Name
-                </label>
+                
                 <input
                   type="text"
                   id="fullName"
                   name="fullName"
-                  placeholder="Your Full Name"
+                  placeholder="Full Name"
                   className="mt-1 w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 bg-white"
                   required
                 />
               </div>
               <div className="mb-4">
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-white"
-                >
-                  Email Address
-                </label>
+              
                 <input
                   type="email"
                   id="email"
                   name="email"
-                  placeholder="your.email@example.com"
+                  placeholder="Email ID"
                   className="mt-1 w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 bg-white"
                   required
                 />
               </div>
               <div className="mb-4">
-                <label
-                  htmlFor="mobileNumber"
-                  className="block text-sm font-medium text-white"
-                >
-                  Mobile Number
-                </label>
+                
                 <input
                   type="tel"
                   id="mobileNumber"
                   name="mobileNumber"
-                  placeholder="e.g., 9876543210"
+                  placeholder="Mobile Number"
                   className="mt-1 w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 bg-white"
                   required
                 />
               </div>
               <button
                 type="submit"
-                className="mt-4 w-[56%] bg-orange-500 text-white py-2 rounded-xl hover:bg-orange-600 transition duration-200 cursor-pointer align-center mx-auto block"
+                className="mt-4 w-[40%] bg-orange-500 text-white py-2 rounded-xl hover:bg-orange-600 transition duration-200 cursor-pointer align-center mx-auto block"
               >
-                Schedule Appointment
+                Submit
               </button>
             </form>
           </div>

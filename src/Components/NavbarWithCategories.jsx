@@ -334,6 +334,16 @@ export default function NavbarWithCategories() {
       setDrawerOpen(false);
     }
   };
+
+  // New handler for top-level category clicks
+  const handleMainCategoryClick = (categoryName) => {
+    if (categoryName === "Cats" || categoryName === "Dogs") {
+      navigate("/"); // Navigate to the home page
+    } else if (categoryName === "Consult a Vet") {
+      navigate("/consult-a-vet");
+    }
+    // You can add more specific navigations for other main categories here
+  };
   return (
     <>
       {/* TOP NAVBAR */}
@@ -414,28 +424,21 @@ export default function NavbarWithCategories() {
         </div>
       </div>
 
-      {/* CATEGORY NAVBAR - DESKTOP */}
-
+    {/* CATEGORY NAVBAR - DESKTOP */}
       <nav className="bg-white shadow-md sticky top-0 z-50 hidden md:block">
         <div className="max-w-[1400px] mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex space-x-12 text-gray-800 font-medium relative mx-25 ">
             {categories.map((cat, index) => (
               <div key={index} className="relative group">
-                {/* If the main category itself should navigate to the base page */}
-    {cat.name === "Consult a Vet" ? (
-      <button
-        onClick={() => navigate("/consult-a-vet")} // Direct navigation for "Consult a Vet"
-        className="hover:text-blue-600 text-xl font-bold"
-      >
-        {cat.name}
-      </button>
-    ) : (
-      <button className="hover:text-blue-600 text-xl font-bold">
-        {cat.name}
-      </button>
-    )}
+                {/* Modified button to handle navigation for Cats, Dogs, and Consult a Vet */}
+                <button
+                  onClick={() => handleMainCategoryClick(cat.name)} // Use the new handler here
+                  className="hover:text-blue-600 text-xl font-bold cursor-pointer"
+                >
+                  {cat.name}
+                </button>
 
-               
+
                 {["Cats", "Dogs", "Pharmacy"].includes(cat.name) &&
                   cat.subCategories?.length > 0 && (
                     <div className="absolute left-0 top-full w-[1150px] h-[500px] bg-white border-t border-gray-200 shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-50 overflow-y-auto rounded-lg">
@@ -457,6 +460,7 @@ export default function NavbarWithCategories() {
           </div>
         </div>
       </nav>
+
 
       {/* CATEGORY DRAWER - MOBILE */}
       <div

@@ -14,7 +14,7 @@ const SingleBanner = () => {
       <img
         src={a2}
         alt="Mobile Banner"
-        className="block md:hidden w-full h-full object-cover px-2"
+        className="block md:hidden w-auto h-full object-cover px-2"
         loading="lazy"
         style={{ objectFit: "cover" }}
       />

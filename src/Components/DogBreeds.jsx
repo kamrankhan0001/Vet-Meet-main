@@ -32,7 +32,7 @@ const DogBreeds = () => {
         Explore by Pets
       </h1>
 
-      <div className="overflow-x-auto scroll-smooth snap-x snap-mandatory">
+      <div className="overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide">
         <div className="flex space-x-2 md:space-x-8 mx-2 md:mx-2">
           {dogImages.map((dog, index) => (
             <div

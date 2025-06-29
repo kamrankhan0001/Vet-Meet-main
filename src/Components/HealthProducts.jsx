@@ -33,7 +33,7 @@ const HealthProducts = () => {
       </div>
 
       {/* Horizontal Scroll Product Cards */}
-      <div className="mt-10 overflow-x-auto px-4">
+      <div className="mt-10 overflow-x-auto px-4 scrollbar-hide">
         <div className="flex gap-5 md:gap-8 w-max">
           {healthcareItems.map((item, index) => (
             <div

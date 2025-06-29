@@ -38,7 +38,6 @@ const categories = [
   { title: "Fashion Corner", image: food12 },
   { title: "Pet Cleaning Wipes", image: food13 },
   { title: "Grooming Product", image: food14 },
-  
   { title: "Dog Travel Bag", image: Food15 },
   { title: "Health Care", image: food17 },
   { title: "Walking Essentials", image: food19, link: "/products/pet-pharmacy" },
@@ -74,7 +73,7 @@ const CategoriesGrid = () => {
       </div>
 
       {/* Desktop & Tablet view: all items */}
-      <div className="hidden sm:grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+      <div className="hidden sm:grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
         {categories.map((category, index) => (
           <Link
             to={category.link || "#"}
@@ -87,7 +86,7 @@ const CategoriesGrid = () => {
               className="w-full h-46 object-cover rounded-t-3xl"
             />
             <div className="py-3 text-center bg-white">
-              <p className="text-sm font-semibold text-gray-800 font-Nunito">
+              <p className="text-sm font-semi-bold text-gray-800 font-Nunito">
                 {category.title}
               </p>
             </div>
