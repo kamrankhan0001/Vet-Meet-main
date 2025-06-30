@@ -21,6 +21,12 @@ import Tip5 from "./assets/Health/HealthTip5.png";
 import ProductListingPage from "./pages/ProductListingPage";
 import CatFoodListingPage from "./pages/CatFoodListingPage";
 import VetAndMeetPage from './pages/VetAndMeetPage';
+import HenloProductListing from './Components/HenloProductListing'; 
+import { CartProvider } from "./context/CartContext";
+import CartPage from "./pages/CartPage";
+import PaymentGatewayPage from './pages/PaymentGatewayPage';
+
+
 
 
 const allArticles = [
@@ -67,6 +73,8 @@ const App = () => {
 
   return (
     <Router>
+      <CartProvider>
+      
       <NavbarWithCategories />
 
       <Routes>
@@ -93,6 +101,14 @@ const App = () => {
             path="/consult-a-vet"
             element={<VetAndMeetPage toggleAppointmentModal={toggleAppointmentModal} />}
           />
+
+          <Route path="/henlo-products" element={<HenloProductListing />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/checkout" element={<PaymentGatewayPage />} />
+          
+          
+
+          
       </Routes>
 
       {/* BOOK APPOINTMENT MODAL - Moved here to be controlled by App's state */}
@@ -152,6 +168,7 @@ const App = () => {
           </div>
         </div>
       )}
+</CartProvider>
     </Router>
   );
 };

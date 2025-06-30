@@ -1,95 +1,75 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
+import catProductsData from '../data/catProducts.json'; 
 
 
-// import catProduct1 from '../assets/Products/cat-food-product1.png';
 
-
-// Placeholder for cat product data (mimicking the image content)
-const catProducts = [
-  {
-    id: 1,
-    name: 'Skatrs Sandal Shaped Hand Made Food Grade Rope Chew Toy For All Cats (Light Yellow)',
-    rating: 4.0,
-    reviews: 13,
-    currentPrice: '₹89',
-    originalPrice: '₹99',
-    discount: '10% OFF',
-    image: "",
-    weightOptions: ['13cm']
-  },
-  {
-    id: 2,
-    name: 'Whiskas Chicken Fish Chunks in Gravy Adult Wet Cat Food All Life Stage',
-    rating: 4.0,
-    reviews: 247,
-    currentPrice: '₹2,370',
-    originalPrice: '₹2,600',
-    discount: '9% OFF',
-    image: "",
-    weightOptions: ['60x80g', '30x80g', '15x80g']
-  },
-  {
-    id: 3,
-    name: 'Drools Tuna and Salmon Dry Cat Food All Life Stage',
-    rating: 4.8,
-    reviews: 17,
-    currentPrice: '₹1,925',
-    originalPrice: '₹2,199',
-    discount: '12% OFF',
-    image: "",
-    weightOptions: ['1.5kg', '3kg', '400g']
-  },
-  {
-    id: 4,
-    name: 'Whiskas Dry Cat Food With Ocean Fish',
-    rating: 4.9,
-    reviews: 67,
-    currentPrice: '₹3,750',
-    originalPrice: '₹4,200',
-    discount: '10% OFF',
-    image: "",
-    weightOptions: ['14kg', '7kg', '3kg', '1.2kg']
-  },
-  {
-    id: 5,
-    name: 'Sheba Dry With Bonito Flake, Chicken and Salmon Fish And Cat Wet Food Combo',
-    rating: 4.5,
-    reviews: 35,
-    currentPrice: '₹3,168',
-    originalPrice: '₹3,600',
-    discount: '12% OFF',
-    image: "",
-    weightOptions: ['72x35g', '36x35g']
-  },
-  {
-    id: 6,
-    name: 'Purina Felix Mackerel With Tuna In Jelly Adult Cat Wet Food Combo',
-    rating: 4.2,
-    reviews: 34,
-    currentPrice: '₹4,012',
-    originalPrice: '₹4,600',
-    discount: '13% OFF',
-    image: "",
-    weightOptions: ['24x85g', '12x85g', '8x85g']
-  },
-  
-];
 
 const CatFoodListingPage = () => {
   const [showFilters, setShowFilters] = useState(false);
+  // Use the imported data directly or manage it with state if filtering/sorting is implemented later
+  const productsToDisplay = catProductsData; 
+
+  /*
+    Regarding "efficiently handling thousands of products":
+    
+    1.  Server-Side Pagination/Infinite Scroll:
+        For truly thousands of products, you would typically NOT load all of them
+        into a single JSON file and then into the client's memory. Instead,
+        you would fetch products from an API in smaller chunks (e.g., 20-50 per page).
+        
+        Example (conceptual, requires a backend API):
+        const [products, setProducts] = useState([]);
+        const [page, setPage] = useState(1);
+        const [loading, setLoading] = useState(false);
+        const [hasMore, setHasMore] = useState(true);
+
+        useEffect(() => {
+          const fetchProducts = async () => {
+            setLoading(true);
+            try {
+              const response = await fetch(`/api/cat-products?page=${page}&limit=20`);
+              const data = await response.json();
+              setProducts(prevProducts => [...prevProducts, ...data.products]);
+              setHasMore(data.hasMore); // Backend tells us if there are more pages
+            } catch (error) {
+              console.error("Failed to fetch products:", error);
+            } finally {
+              setLoading(false);
+            }
+          };
+          fetchProducts();
+        }, [page]); // Fetch new page when 'page' state changes
+
+        // Then in your render:
+        {products.map((product) => (...))}
+        {hasMore && <button onClick={() => setPage(prev => prev + 1)}>Load More</button>}
+        {loading && <p>Loading...</p>}
+
+    2.  Virtualization (for very long single lists):
+        If you absolutely must have a very long list on the client (e.g., all 1000 items
+        are filtered/sorted client-side), you'd use libraries like `react-window` or
+        `react-virtualized` to only render the items visible in the viewport, improving
+        performance significantly.
+
+    3.  Image Lazy Loading:
+        For image-heavy listings, use `loading="lazy"` on image tags or a dedicated
+        React lazy-load component to defer image loading until they are near the viewport.
+        (This is a good practice even for moderate lists).
+  */
+
 
   return (
     <div className="min-h-screen bg-gray-100">
       <Helmet>
-        <title>Cat Food: Best Cat Food for Cats - Vet&Meet</title>
+        <title>Best Cat Food for Cats - Vet&Meet</title>
         <meta
           name="description"
           content="Shop for the best cat food for your beloved feline. Explore a wide range of dry food, wet food, and more with Vet&Meet."
         />
       </Helmet>
 
-      
+      {/* Mobile Filter Toggle Bar */}
       <div className="sm:hidden bg-white shadow-sm p-4 sticky top-0 z-10 flex justify-between items-center">
         <h1 className="text-lg font-bold">Cat Food</h1>
         <button
@@ -213,7 +193,7 @@ const CatFoodListingPage = () => {
             <input
               type="range"
               min="0"
-              max="20000" 
+              max="20000"
               value="19000"
               className="w-full"
             />
@@ -449,10 +429,11 @@ const CatFoodListingPage = () => {
         {/* Product Listing */}
         <main className="flex-1">
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 hidden sm:block">
-            Cat Food: Best Cat Food for Cats
+             Best Cat Food for Cats
           </h1>
           <div className="flex justify-between items-center mb-4">
-            <span className="text-gray-600 text-sm sm:text-base">1232 products</span> {/* Adjust product count if needed */}
+            {/* Display count based on loaded products */}
+            <span className="text-gray-600 text-sm sm:text-base">{productsToDisplay.length} products</span>
             <div className="flex items-center space-x-2">
               <label htmlFor="sort" className="text-gray-600 text-sm">
                 Sort by:
@@ -469,13 +450,13 @@ const CatFoodListingPage = () => {
             </div>
           </div>
 
-          
+
           <div className="bg-yellow-100 border border-yellow-300 p-3 rounded-lg mb-6 text-center text-sm font-semibold text-yellow-800">
             ICICI Bank Extra 5% off On ICICI Bank Credit/Debit Cards & EMI* T&C
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {catProducts.map((product) => (
+            {productsToDisplay.map((product) => (
               <div
                 key={product.id}
                 className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 relative overflow-hidden"
@@ -485,16 +466,20 @@ const CatFoodListingPage = () => {
                   <img
                     src={product.image}
                     alt={product.name}
+                    // Add loading="lazy" for better performance with many images
+                    loading="lazy" 
                     className="absolute top-0 left-0 w-full h-full object-contain p-4"
                   />
-                  <span className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full z-10">
-                    {product.discount}
-                  </span>
+                  {product.discount && ( // Only show discount if it exists
+                    <span className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full z-10">
+                      {product.discount}
+                    </span>
+                  )}
                 </div>
 
                 {/* Product Info Section */}
                 <div className="p-3">
-                  <h3 className="text-sm font-semibold text-gray-800 mb-1 leading-tight truncate">
+                  <h3 className="text-sm font-semibold text-gray-800 mb-1 leading-tight line-clamp-2"> {/* Use line-clamp for consistent height */}
                     {product.name}
                   </h3>
                   <div className="flex items-center text-xs text-gray-600 mb-2">
@@ -505,18 +490,22 @@ const CatFoodListingPage = () => {
                     <span className="text-lg font-bold text-gray-900 mr-2">
                       {product.currentPrice}
                     </span>
-                    <span className="text-sm text-gray-500 line-through">
-                      {product.originalPrice}
-                    </span>
+                    {product.originalPrice && ( // Only show original price if it exists
+                      <span className="text-sm text-gray-500 line-through">
+                        {product.originalPrice}
+                      </span>
+                    )}
                   </div>
                   <div className="mb-3">
-                    <select className="w-full text-xs border border-gray-300 rounded-md p-1 focus:ring-teal-500 focus:border-teal-500">
-                      {product.weightOptions.map((option, idx) => (
-                        <option key={idx} value={option}>
-                          {option}
-                        </option>
-                      ))}
-                    </select>
+                    {product.weightOptions && product.weightOptions.length > 0 && ( // Only show select if options exist
+                        <select className="w-full text-xs border border-gray-300 rounded-md p-1 focus:ring-teal-500 focus:border-teal-500">
+                            {product.weightOptions.map((option, idx) => (
+                                <option key={idx} value={option}>
+                                    {option}
+                                </option>
+                            ))}
+                        </select>
+                    )}
                   </div>
                   <button className="w-full bg-amber-400 text-black py-2 rounded-md font-semibold text-sm hover:bg-amber-500 transition-colors duration-200">
                     ADD TO CART

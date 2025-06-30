@@ -1,0 +1,112 @@
+ [
+  {
+    "id": 1,
+    "name": "Henlo Freeze-Dried Chicken Dog Treats",
+    "currentPrice": "₹399",
+    "originalPrice": "₹450",
+    "discount": "11% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/files/Chicken_front_2_360x.png?v=1708453406",
+    "rating": 4.7,
+    "reviews": 85,
+    "weightOptions": ["50g", "100g"]
+  },
+  {
+    "id": 2,
+    "name": "Henlo Puppy Training Pads (Large)",
+    "currentPrice": "₹899",
+    "originalPrice": "₹1000",
+    "discount": "10% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/files/PDP-Product-Image_360x.jpg?v=1708688487",
+    "rating": 4.5,
+    "reviews": 120,
+    "weightOptions": ["30 Count", "50 Count"]
+  },
+  {
+    "id": 3,
+    "name": "Henlo Salmon & Cod Oil Supplement",
+    "currentPrice": "₹699",
+    "originalPrice": "₹750",
+    "discount": "7% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/files/Salmon_oil_front_2_360x.png?v=1708453535",
+    "rating": 4.8,
+    "reviews": 45,
+    "weightOptions": ["250ml", "500ml"]
+  },
+  {
+    "id": 4,
+    "name": "Henlo Dental Sticks for Dogs (Mint Flavor)",
+    "currentPrice": "₹299",
+    "originalPrice": "₹320",
+    "discount": "6% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/files/Daily_Dental_front_2_360x.png?v=1708453303",
+    "rating": 4.2,
+    "reviews": 70,
+    "weightOptions": ["Small", "Medium", "Large"]
+  },
+  {
+    "id": 5,
+    "name": "Henlo Odour Eliminator Spray",
+    "currentPrice": "₹499",
+    "originalPrice": "₹550",
+    "discount": "9% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/files/Deodorizer_PDP_360x.png?v=1708453187",
+    "rating": 4.0,
+    "reviews": 30,
+    "weightOptions": ["200ml", "500ml"]
+  },
+  {
+    "id": 6,
+    "name": "Henlo Soft & Chewy Beef Jerky Treats",
+    "currentPrice": "₹349",
+    "originalPrice": "₹380",
+    "discount": "8% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/files/Beef_front_2_360x.png?v=1708453361",
+    "rating": 4.6,
+    "reviews": 55,
+    "weightOptions": ["75g", "150g"]
+  },
+  {
+    "id": 7,
+    "name": "Henlo Training Clicker with Wrist Strap",
+    "currentPrice": "₹150",
+    "originalPrice": "₹180",
+    "discount": "17% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/products/training-clicker-200-2_360x.jpg?v=1676646545",
+    "rating": null,
+    "reviews": null,
+    "weightOptions": ["1 Unit"]
+  },
+  {
+    "id": 8,
+    "name": "Henlo Stainless Steel Double Diner Bowl",
+    "currentPrice": "₹799",
+    "originalPrice": "₹850",
+    "discount": "6% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/files/Food_Bowl_front_360x.png?v=1708453316",
+    "rating": 4.3,
+    "reviews": 40,
+    "weightOptions": ["Small", "Medium"]
+  },
+  {
+    "id": 9,
+    "name": "Henlo Rope Toy for Aggressive Chewers",
+    "currentPrice": "₹420",
+    "originalPrice": "₹480",
+    "discount": "12% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/products/HenloRopeToy_360x.jpg?v=1676646545",
+    "rating": 4.1,
+    "reviews": 25,
+    "weightOptions": ["1 Unit"]
+  },
+  {
+    "id": 10,
+    "name": "Henlo Grain-Free Dry Dog Food (Lamb Recipe)",
+    "currentPrice": "₹2,500",
+    "originalPrice": "₹2,800",
+    "discount": "11% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/files/dog-food-lamb-front_360x.png?v=1708453245",
+    "rating": 4.9,
+    "reviews": 90,
+    "weightOptions": ["1.5kg", "5kg"]
+  }
+]

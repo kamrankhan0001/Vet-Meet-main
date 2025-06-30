@@ -1,0 +1,222 @@
+[
+  {
+    "id": 1,
+    "name": "Whiskas Chicken Fish Chunks in Gravy Adult Wet Cat Food All Life Stage (Pouch)",
+    "rating": 4.0,
+    "reviews": 247,
+    "currentPrice": "₹2,370",
+    "originalPrice": "₹2,600",
+    "discount": "9% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/products/WHISKAS-CHICKEN-FISH-CHUNKS-IN-GRAVY-ADULT-WET-CAT-FOOD-ALL-LIFE-STAGE-POUCH-1-1.2kg_0000_15_X_80G.png?v=1678198755&width=360",
+    "weightOptions": ["60x80g", "30x80g", "15x80g"]
+  },
+  {
+    "id": 2,
+    "name": "Drools Tuna and Salmon Dry Cat Food All Life Stage",
+    "rating": 4.8,
+    "reviews": 17,
+    "currentPrice": "₹1,925",
+    "originalPrice": "₹2,199",
+    "discount": "12% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/products/DROOLS-TUNA-AND-SALMON-DRY-CAT-FOOD-ALL-LIFE-STAGE-1.5kg-1.png?v=1678200676&width=360",
+    "weightOptions": ["1.5kg", "3kg", "400g"]
+  },
+  {
+    "id": 3,
+    "name": "Whiskas Dry Cat Food With Ocean Fish",
+    "rating": 4.9,
+    "reviews": 67,
+    "currentPrice": "₹3,750",
+    "originalPrice": "₹4,200",
+    "discount": "10% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/products/WHISKAS-DRY-CAT-FOOD-WITH-OCEAN-FISH-14KG-1.png?v=1678199732&width=360",
+    "weightOptions": ["14kg", "7kg", "3kg", "1.2kg"]
+  },
+  {
+    "id": 4,
+    "name": "Sheba Dry With Bonito Flake, Chicken and Salmon Fish And Cat Wet Food Combo",
+    "rating": 4.5,
+    "reviews": 35,
+    "currentPrice": "₹3,168",
+    "originalPrice": "₹3,600",
+    "discount": "12% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/products/SHEBA-DRY-WITH-BONITO-FLAKE-CHICKEN-AND-SALMON-FISH-AND-CAT-WET-FOOD-COMBO-1_2_1.png?v=1678199347&width=360",
+    "weightOptions": ["72x35g", "36x35g"]
+  },
+  {
+    "id": 5,
+    "name": "Purina Felix Mackerel With Tuna In Jelly Adult Cat Wet Food Combo",
+    "rating": 4.2,
+    "reviews": 34,
+    "currentPrice": "₹4,012",
+    "originalPrice": "₹4,600",
+    "discount": "13% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/products/PURINA-FELIX-MACKEREL-WITH-TUNA-IN-JELLY-ADULT-CAT-WET-FOOD-COMBO_1_1.png?v=1678199047&width=360",
+    "weightOptions": ["24x85g", "12x85g", "8x85g"]
+  },
+  {
+    "id": 6,
+    "name": "Meat Up Adult Dry Cat Food With Ocean Fish",
+    "rating": 4.5,
+    "reviews": 53,
+    "currentPrice": "₹1,520",
+    "originalPrice": "₹1,600",
+    "discount": "5% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/products/MEAT-UP-ADULT-DRY-CAT-FOOD-WITH-OCEAN-FISH-8KG-1.png?v=1678198751&width=360",
+    "weightOptions": ["8kg", "3kg", "1.2kg"]
+  },
+  {
+    "id": 7,
+    "name": "Meat Up Kitten Dry Cat Food With Ocean Fish",
+    "rating": 4.2,
+    "reviews": 12,
+    "currentPrice": "₹1,520",
+    "originalPrice": "₹1,600",
+    "discount": "5% OFF",
+    "image": "",
+    "weightOptions": ["8kg", "3kg", "1.2kg"]
+  },
+  {
+    "id": 8,
+    "name": "Drools Ocean Fish Adult Dry Cat Food",
+    "rating": 4.7,
+    "reviews": 45,
+    "currentPrice": "₹1,080",
+    "originalPrice": "₹1,200",
+    "discount": "10% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/products/DROOLS-OCEAN-FISH-ADULT-DRY-CAT-FOOD-3kg-1.png?v=1678200676&width=360",
+    "weightOptions": ["3kg", "7kg", "1.2kg"]
+  },
+  {
+    "id": 9,
+    "name": "Purepet Ocean Fish Adult Dry Cat Food",
+    "rating": 4.6,
+    "reviews": 28,
+    "currentPrice": "₹950",
+    "originalPrice": "₹1,000",
+    "discount": "5% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/products/PUREPET-OCEAN-FISH-ADULT-DRY-CAT-FOOD-1.2kg-1.png?v=1678198906&width=360",
+    "weightOptions": ["1.2kg", "3kg", "7kg"]
+  },
+  {
+    "id": 10,
+    "name": "Sheba Premium Salmon In Gravy Wet Cat Food All Life Stage",
+    "rating": 4.3,
+    "reviews": 18,
+    "currentPrice": "₹1,548",
+    "originalPrice": "₹1,800",
+    "discount": "14% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/products/SHEBA-PREMIUM-SALMON-IN-GRAVY-WET-CAT-FOOD-ALL-LIFE-STAGE-12X85G-1_2_1.png?v=1678199273&width=360",
+    "weightOptions": ["12x85g", "6x85g", "24x85g"]
+  },
+  {
+    "id": 11,
+    "name": "Whiskas Kitten Dry Cat Food with Ocean Fish",
+    "rating": 4.8,
+    "reviews": 20,
+    "currentPrice": "₹1,180",
+    "originalPrice": "₹1,300",
+    "discount": "9% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/products/WHISKAS-KITTEN-DRY-CAT-FOOD-WITH-OCEAN-FISH-1.2KG-1_1.png?v=1678199676&width=360",
+    "weightOptions": ["1.2kg", "3kg"]
+  },
+  {
+    "id": 12,
+    "name": "Purina Supercoat Dry Cat Food Adult with Tuna",
+    "rating": 4.0,
+    "reviews": 15,
+    "currentPrice": "₹2,370",
+    "originalPrice": "₹2,600",
+    "discount": "9% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/products/PURINA-SUPERCOAT-DRY-CAT-FOOD-ADULT-WITH-TUNA-3KG-1.png?v=1678198755&width=360",
+    "weightOptions": ["3kg", "1.5kg"]
+  },
+  {
+    "id": 13,
+    "name": "Purina Felix Adult Wet Cat Food As Good As It Looks Salmon In Jelly",
+    "rating": 4.5,
+    "reviews": 10,
+    "currentPrice": "₹1,500",
+    "originalPrice": "₹1,800",
+    "discount": "16% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/products/PURINA-FELIX-ADULT-WET-CAT-FOOD-AS-GOOD-AS-IT-LOOKS-SALMON-IN-JELLY-6X85G-1_1.png?v=1678199047&width=360",
+    "weightOptions": ["6x85g", "12x85g", "24x85g"]
+  },
+  {
+    "id": 14,
+    "name": "Royal Canin Kitten Dry Cat Food",
+    "rating": 4.9,
+    "reviews": 78,
+    "currentPrice": "₹4,300",
+    "originalPrice": "₹4,800",
+    "discount": "10% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/products/ROYAL-CANIN-KITTEN-DRY-CAT-FOOD-2kg-1.png?v=1678200676&width=360",
+    "weightOptions": ["2kg", "4kg", "10kg", "400g"]
+  },
+  {
+    "id": 15,
+    "name": "Arden Grange Adult Dry Cat Food with Fresh Chicken & Potato",
+    "rating": 4.6,
+    "reviews": 5,
+    "currentPrice": "₹2,500",
+    "originalPrice": "₹2,800",
+    "discount": "10% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/products/ARDEN-GRANGE-ADULT-DRY-CAT-FOOD-WITH-FRESH-CHICKEN-AND-POTATO-2kg-1.png?v=1678198751&width=360",
+    "weightOptions": ["2kg", "4kg"]
+  },
+  {
+    "id": 16,
+    "name": "Hill's Science Diet Adult Dry Cat Food Perfect Weight",
+    "rating": 4.7,
+    "reviews": 9,
+    "currentPrice": "₹3,500",
+    "originalPrice": "₹3,900",
+    "discount": "10% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/products/HILLS-SCIENCE-DIET-ADULT-DRY-CAT-FOOD-PERFECT-WEIGHT-1.5kg-1.png?v=1678198642&width=360",
+    "weightOptions": ["1.5kg", "3kg"]
+  },
+  {
+    "id": 17,
+    "name": "Farmina N&D Quinoa Digestion Lamb Dry Cat Food Adult",
+    "rating": 4.9,
+    "reviews": 11,
+    "currentPrice": "₹2,800",
+    "originalPrice": "₹3,200",
+    "discount": "12% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/products/FARMINA-N-D-QUINOA-DIGESTION-LAMB-DRY-CAT-FOOD-ADULT-1.5kg-1.png?v=1678198906&width=360",
+    "weightOptions": ["1.5kg", "5kg"]
+  },
+  {
+    "id": 18,
+    "name": "Fofos Taffy Catnip Crinkle Fish Cat Toy",
+    "rating": 4.1,
+    "reviews": 7,
+    "currentPrice": "₹250",
+    "originalPrice": "₹280",
+    "discount": "10% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/products/Fofos-Taffy-Catnip-Crinkle-Fish-Cat-Toy.jpg?v=1678200676&width=360",
+    "weightOptions": ["1 Unit"]
+  },
+  {
+    "id": 19,
+    "name": "Kong Cat Zoom Groom Brush For Cats",
+    "rating": 4.5,
+    "reviews": 12,
+    "currentPrice": "₹550",
+    "originalPrice": "₹600",
+    "discount": "8% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/products/Kong-Cat-Zoom-Groom-Brush-For-Cats.jpg?v=1678199273&width=360",
+    "weightOptions": ["1 Unit"]
+  },
+  {
+    "id": 20,
+    "name": "Sheba Delicates In Gravy Variety Pack Wet Cat Food All Life Stage",
+    "rating": 4.4,
+    "reviews": 25,
+    "currentPrice": "₹2,900",
+    "originalPrice": "₹3,300",
+    "discount": "12% OFF",
+    "image": "https://cdn.shopify.com/s/files/1/0530/5095/0603/products/SHEBA-DELICATES-IN-GRAVY-VARIETY-PACK-WET-CAT-FOOD-ALL-LIFE-STAGE-36x70g-1.png?v=1678199676&width=360",
+    "weightOptions": ["36x70g", "12x70g"]
+  }
+]

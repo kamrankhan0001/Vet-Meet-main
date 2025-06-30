@@ -6,191 +6,170 @@ import {
   FaPhoneAlt,
   FaMapMarkerAlt,
 } from "react-icons/fa";
-
-
-import LoginWithOTP from "../pages/ProfilePage"; 
+import LoginWithOTP from "../pages/ProfilePage";
 import { useNavigate } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
+
 
 const categories = [
   {
     name: "Cats",
     subCategories: [
       <h3 className="font-bold mb-2 ">Cat Food</h3>,
-
-      "  Dry Food",
-      "  Wet Food",
-      "  Kitten Food",
-      "  Premium Food",
-
+      "  Dry Food",
+      "  Wet Food",
+      "  Kitten Food",
+      "  Premium Food",
       <h3 className="font-bold mb-2">Cat Treats</h3>,
-      "  Creamy Treats",
-      "  Jerky Treats",
-      "  Crunchy Treats",
-      "  Kitty Licks",
-      "  Kittos",
-
+      "  Creamy Treats",
+      "  Jerky Treats",
+      "  Crunchy Treats",
+      "  Kitty Licks",
+      "  Kittos",
       "Cat Litter Supplies",
-      "  Litter",
-      "  Litter Boxes & Toilets",
-      "  Cleaning & Deodorizers",
-      "  Scooper & Waste Disposal",
-      "  Scented Litter",
-
+      "  Litter",
+      "  Litter Boxes & Toilets",
+      "  Cleaning & Deodorizers",
+      "  Scooper & Waste Disposal",
+      "  Scented Litter",
       "Cat Toys",
-      "  Cat Teasers",
-      "  Ball & Chaser Toys",
-      "  Catnip Toys",
-      "  Plush Toys",
-      "  Cat Trees & Scratchers",
-      "  Smart & Interactive Toys",
-
+      "  Cat Teasers",
+      "  Ball & Chaser Toys",
+      "  Catnip Toys",
+      "  Plush Toys",
+      "  Cat Trees & Scratchers",
+      "  Smart & Interactive Toys",
       "Pharmacy",
-      "  Dewormer",
-      "  Tick & Fleas",
-      "  Skin Care",
-      "  Joint Care",
-      "  Gut Health",
-      "  Cardiac Care",
-      "  Kidney Care",
-      "  Liver Care",
-
+      "  Dewormer",
+      "  Tick & Fleas",
+      "  Skin Care",
+      "  Joint Care",
+      "  Gut Health",
+      "  Cardiac Care",
+      "  Kidney Care",
+      "  Liver Care",
       "Cat Walk & Travel Supplies",
-      "  GPS Tracker",
-      "  Collars",
-      "  Leashes",
-      "  Harnesses",
-      "  Bells & Tags",
-
+      "  GPS Tracker",
+      "  Collars",
+      "  Leashes",
+      "  Harnesses",
+      "  Bells & Tags",
       "Cat Clothing",
-      "  Summer Clothing",
-      "  IPL Jerseys New",
-      "  Tshirts & Shirts",
-      "  Bandanas & Bowties",
-      "  Bells & Tags",
-      "  Kurtas",
-      "  Dresses",
-      "  Lehangas",
-      "  Jackets & Sweaters",
-      "  Hoodies",
-
+      "  Summer Clothing",
+      "  IPL Jerseys New",
+      "  Tshirts & Shirts",
+      "  Bandanas & Bowties",
+      "  Bells & Tags",
+      "  Kurtas",
+      "  Dresses",
+      "  Lehangas",
+      "  Jackets & Sweaters",
+      "  Hoodies",
       "Bowls & Feeders",
-      "  Water Fountain",
-      "  Food & Water Dispenser",
-      "  Steel Bowls",
-      "  Printed Bowls",
-      "  Plastic Bowls",
-      "  Slow Feeders & Licky mats",
-
+      "  Water Fountain",
+      "  Food & Water Dispenser",
+      "  Steel Bowls",
+      "  Printed Bowls",
+      "  Plastic Bowls",
+      "  Slow Feeders & Licky mats",
       "Cat Grooming",
-      "  Shampoos & Conditioners",
-      "  Brushes & Combs",
-      "  Paw & Nail Care",
-      "  Ear & eye care",
-      "  Trimmers & Nail Clippers",
-      "  Grooming Tools",
-      "  Towels & Wipes",
-      "  Deodorants & Perfumes",
-      "  Anti tick & flea",
-
+      "  Shampoos & Conditioners",
+      "  Brushes & Combs",
+      "  Paw & Nail Care",
+      "  Ear & eye care",
+      "  Trimmers & Nail Clippers",
+      "  Grooming Tools",
+      "  Towels & Wipes",
+      "  Deodorants & Perfumes",
+      "  Anti tick & flea",
       "Health & Wellness",
-      "  Supplements",
-      "  Anti Tick & Fleas",
-      "  Calming Aids",
-      "  Health Care Aids",
-      "  Deworming",
-      "  Prescription Diet",
+      "  Supplements",
+      "  Anti Tick & Fleas",
+      "  Calming Aids",
+      "  Health Care Aids",
+      "  Deworming",
+      "  Prescription Diet",
     ],
   },
-
   {
     name: "Dogs",
     subCategories: [
       "Dog Food",
-      "  Dry Food",
-      "  Wet Food",
-      "  Puppy Food",
-      "  Premium Food",
-
+      "  Dry Food",
+      "  Wet Food",
+      "  Puppy Food",
+      "  Premium Food",
       "Dog Treats",
-      "  Creamy Treats",
-      "  Jerky Treats",
-      "  Crunchy Treats",
-      "  Doggy Licks",
-      "  Doggos",
-
+      "  Creamy Treats",
+      "  Jerky Treats",
+      "  Crunchy Treats",
+      "  Doggy Licks",
+      "  Doggos",
       "Dog Litter Supplies",
-      "  Litter",
-      "  Litter Boxes & Toilets",
-      "  Cleaning & Deodorizers",
-      "  Scooper & Waste Disposal",
-      "  Scented Litter",
-
+      "  Litter",
+      "  Litter Boxes & Toilets",
+      "  Cleaning & Deodorizers",
+      "  Scooper & Waste Disposal",
+      "  Scented Litter",
       "Dog Toys",
-      "  Dog Teasers",
-      "  Ball & Chaser Toys",
-      "  Dognip Toys",
-      "  Plush Toys",
-      "  Dog Trees & Scratchers",
-      "  Smart & Interactive Toys",
-
+      "  Dog Teasers",
+      "  Ball & Chaser Toys",
+      "  Dognip Toys",
+      "  Plush Toys",
+      "  Dog Trees & Scratchers",
+      "  Smart & Interactive Toys",
       "Pharmacy",
-      "  Dewormer",
-      "  Tick & Fleas",
-      "  Skin Care",
-      "  Joint Care",
-      "  Gut Health",
-      "  Cardiac Care",
-      "  Kidney Care",
-      "  Liver Care",
-
+      "  Dewormer",
+      "  Tick & Fleas",
+      "  Skin Care",
+      "  Joint Care",
+      "  Gut Health",
+      "  Cardiac Care",
+      "  Kidney Care",
+      "  Liver Care",
       "Dog Walk & Travel Supplies",
-      "  GPS Tracker",
-      "  Collars",
-      "  Leashes",
-      "  Harnesses",
-      "  Bells & Tags",
-
+      "  GPS Tracker",
+      "  Collars",
+      "  Leashes",
+      "  Harnesses",
+      "  Bells & Tags",
       "Dog Clothing",
-      "  Summer Clothing",
-      "  IPL Jerseys New",
-      "  Tshirts & Shirts",
-      "  Bandanas & Bowties",
-      "  Bells & Tags",
-      "  Kurtas",
-      "  Dresses",
-      "  Lehangas",
-      "  Jackets & Sweaters",
-      "  Hoodies",
-
+      "  Summer Clothing",
+      "  IPL Jerseys New",
+      "  Tshirts & Shirts",
+      "  Bandanas & Bowties",
+      "  Bells & Tags",
+      "  Kurtas",
+      "  Dresses",
+      "  Lehangas",
+      "  Jackets & Sweaters",
+      "  Hoodies",
       "Bowls & Feeders",
-      "  Water Fountain",
-      "  Food & Water Dispenser",
-      "  Steel Bowls",
-      "  Printed Bowls",
-      "  Plastic Bowls",
-      "  Slow Feeders & Licky mats",
-
+      "  Water Fountain",
+      "  Food & Water Dispenser",
+      "  Steel Bowls",
+      "  Printed Bowls",
+      "  Plastic Bowls",
+      "  Slow Feeders & Licky mats",
       "Dog Grooming",
-      "  Shampoos & Conditioners",
-      "  Brushes & Combs",
-      "  Paw & Nail Care",
-      "  Ear & eye care",
-      "  Trimmers & Nail Clippers",
-      "  Grooming Tools",
-      "  Towels & Wipes",
-      "  Deodorants & Perfumes",
-      "  Anti tick & flea",
-
+      "  Shampoos & Conditioners",
+      "  Brushes & Combs",
+      "  Paw & Nail Care",
+      "  Ear & eye care",
+      "  Trimmers & Nail Clippers",
+      "  Grooming Tools",
+      "  Towels & Wipes",
+      "  Deodorants & Perfumes",
+      "  Anti tick & flea",
       "Health & Wellness",
-      "  Supplements",
-      "  Anti Tick & Fleas",
-      "  Calming Aids",
-      "  Health Care Aids",
-      "  Deworming",
-      "  Prescription Diet",
+      "  Supplements",
+      "  Anti Tick & Fleas",
+      "  Calming Aids",
+      "  Health Care Aids",
+      "  Deworming",
+      "  Prescription Diet",
     ],
   },
-
   {
     name: "Pharmacy",
     subCategories: [
@@ -204,9 +183,7 @@ const categories = [
       "Hematinic & Platelet boosters",
       "Weight Management",
       "Food Supplement",
-
       "Prescription Diet",
-
       "Gastro Intestinal",
       "Cardiac",
       "Weight Management",
@@ -216,9 +193,7 @@ const categories = [
       "Recovery",
       "Hypoallergenic",
       "Prescription Diet",
-
       "System wise Care",
-
       "Skin care",
       "Eye & ear care",
       "Joint care",
@@ -232,14 +207,11 @@ const categories = [
       "Oral Care",
       "Wound Care",
       "Pain Medication",
-
       "Parasite Control",
       "Tick & Flea",
       "Dewormers",
       "Anti-tick & flea",
-
       "Antibiotics",
-
       "Dewormer",
       "Tick & Flea",
       "Skin Care",
@@ -255,7 +227,6 @@ const categories = [
       "Anti-biotics",
       "Oral Care",
       "Wound Care",
-
       "Dewormer",
       "Tick & Flea",
       "Skin Care",
@@ -272,18 +243,15 @@ const categories = [
       "Oral Care",
     ],
   },
-
   { name: "Henlo", subCategories: ["Bird Feed", "Accessories"] },
-
   { name: "Shop By Breed", subCategories: ["Labrador", "Persian Cat"] },
-  { 
+  {
     name: "Consult a Vet",
     subCategories: [
-      
-    { name: "Book Appointment", path: "/consult-a-vet?action=book" }, 
-    { name: "Online Chat", path: "/consult-a-vet?action=chat" } 
-] 
- },
+      { name: "Book Appointment", path: "/consult-a-vet?action=book" },
+      { name: "Online Chat", path: "/consult-a-vet?action=chat" }
+    ]
+  },
   { name: "Vet&Meet Clinic ", subCategories: ["Health Plans", "Checkups"] },
   { name: "Summer Sale", subCategories: ["Discounted Items", "Bundles"] },
 ];
@@ -296,31 +264,30 @@ export default function NavbarWithCategories() {
   const [openIndex, setOpenIndex] = useState(null);
   const navigate = useNavigate();
 
+  const { getCartTotalItems } = useCart(); // Use the useCart hook to get total items
+
   const toggleModal = () => setShowModal(!showModal);
   const toggleAppointmentModal = () =>
     setShowAppointmentModal(!showAppointmentModal);
 
- 
   const toggleLoginModal = () => {
     setShowLoginModal(!showLoginModal);
     if (drawerOpen) {
-      setDrawerOpen(false); 
+      setDrawerOpen(false);
     }
   };
 
-
-  const toggleDrawer = () => setDrawerOpen(!drawerOpen); 
+  const toggleDrawer = () => setDrawerOpen(!drawerOpen);
 
   const toggleCategory = (index) =>
     setOpenIndex(openIndex === index ? null : index);
 
- 
   const handleSubCategoryClick = (item) => {
     if (typeof item === "object") {
       if (item.name === "Book Appointment" && item.action === "openBookAppointmentModal") {
-         // This is for opening the modal directly from a specific sub-category click
-         toggleAppointmentModal();
-         setDrawerOpen(false);
+        // This is for opening the modal directly from a specific sub-category click
+        toggleAppointmentModal();
+        setDrawerOpen(false);
       } else if (item.path) { // If a sub-category has a path, navigate there
         navigate(item.path);
         setDrawerOpen(false); // Close the drawer after navigation
@@ -342,8 +309,22 @@ export default function NavbarWithCategories() {
     } else if (categoryName === "Consult a Vet") {
       navigate("/consult-a-vet");
     }
+    else if (categoryName === "Henlo") { // Add this condition
+      navigate("/henlo-products"); // Navigate to the new Henlo product listing page
+    }
+    if (drawerOpen) {
+      setDrawerOpen(false);
+    }
     // You can add more specific navigations for other main categories here
   };
+
+  const handleCartClick = () => {
+    navigate('/cart'); // Navigate to the dedicated cart page
+    if (drawerOpen) {
+      setDrawerOpen(false); // Close drawer if open
+    }
+  };
+
   return (
     <>
       {/* TOP NAVBAR */}
@@ -354,7 +335,7 @@ export default function NavbarWithCategories() {
         {/* Left: Logo */}
         <div className="flex items-center justify-between w-full md:w-auto">
           <button
-            onClick={toggleDrawer} 
+            onClick={toggleDrawer}
             className="md:hidden mr-4 focus:outline-none"
             aria-label="Open Menu"
           >
@@ -396,7 +377,6 @@ export default function NavbarWithCategories() {
         {/* Right: Action Buttons */}
         <div className="flex justify-around w-full md:w-auto space-x-6 md:space-x-4">
           <button onClick={toggleLoginModal} className="flex flex-col items-center text-lg text-white hover:text-black cursor-pointer">
-
             <FaUser className="text-xl" />
             <span>Profile</span>
           </button>
@@ -414,17 +394,17 @@ export default function NavbarWithCategories() {
             <FaPhoneAlt className="text-xl" />
             <span>Call</span>
           </a>
-          <button className="flex flex-col items-center text-lg text-white hover:text-black relative cursor-pointer">
+          <button onClick={handleCartClick} className="flex flex-col items-center text-lg text-white hover:text-black relative cursor-pointer">
             <FaShoppingCart className="text-xl" />
             <span>Cart</span>
-            <span className="absolute top-0 right-0 text-xs bg-red-500 text-white rounded-full px-1">
-              0
+            <span className="absolute -top-1 -right-2 text-xs bg-red-500 text-white rounded-full px-1">
+              {getCartTotalItems()} {/* Display the total number of items in the cart */}
             </span>
           </button>
         </div>
       </div>
 
-    {/* CATEGORY NAVBAR - DESKTOP */}
+      {/* CATEGORY NAVBAR - DESKTOP */}
       <nav className="bg-white shadow-md sticky top-0 z-50 hidden md:block">
         <div className="max-w-[1400px] mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex space-x-12 text-gray-800 font-medium relative mx-25 ">

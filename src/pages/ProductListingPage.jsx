@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
+import { useCart } from '../context/CartContext';
+
 import product2 from '../assets/Products/product2.png';
 import product3 from '../assets/Products/product3.png';
 import product4 from '../assets/Products/product4.png';
@@ -104,6 +106,28 @@ const products = [
 
 const ProductListingPage = () => {
   const [showFilters, setShowFilters] = useState(false);
+  
+  //onst [selectedWeight, setSelectedWeight] = useState(products.weightOptions[0]); // Default to the first weight option
+ const [selectedWeight, setSelectedWeight] = useState(products[0].weightOptions[0]); // Default to the first weight option of the first product
+  const { addToCart } = useCart();
+
+  const handleAddToCart = (product) => {
+  const cleanedPrice = parseFloat(product.currentPrice.replace(/[^0-9.]/g, ''));
+  
+  const productToAdd = {
+    id: product.id,
+    name: product.name,
+    image: product.image,
+    price: cleanedPrice, 
+    
+    quantity: 1,
+  };
+
+  addToCart(productToAdd);
+  alert(`${product.name} added to cart!`);
+};
+
+
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -423,7 +447,7 @@ const ProductListingPage = () => {
         {/* Product Listing */}
         <main className="flex-1">
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 hidden sm:block">
-            Dog Food: Best Dog Food for Dogs
+            Best Dog Food for Dogs
           </h1>
           <div className="flex justify-between items-center mb-4">
             <span className="text-gray-600 text-sm sm:text-base">1232 products</span>
@@ -487,7 +511,7 @@ const ProductListingPage = () => {
                     </span>
                   </div>
                   <div className="mb-3">
-                    <select className="w-full text-xs border border-gray-300 rounded-md p-1 focus:ring-teal-500 focus:border-teal-500"> 
+                    <select onChange={(e) => setSelectedWeight(e.target.value)} className="w-full text-xs border border-gray-300 rounded-md p-1 focus:ring-teal-500 focus:border-teal-500" > 
                       {product.weightOptions.map((option, idx) => (
                         <option key={idx} value={option}>
                           {option}
@@ -495,7 +519,7 @@ const ProductListingPage = () => {
                       ))}
                     </select>
                   </div>
-                  <button className="w-full bg-amber-400 text-black py-2 rounded-md font-semibold text-sm hover:bg-amber-500 transition-colors duration-200">
+                  <button onClick={() => handleAddToCart(product, selectedWeight)} className="w-full bg-amber-400 text-black py-2 rounded-md font-semibold text-sm hover:bg-amber-500 transition-colors duration-200">
                     ADD TO CART
                   </button>
                 </div>
