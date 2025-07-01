@@ -13,12 +13,12 @@ const PaymentPage = () => {
       key: "rzp_test_PV1oQ0oMtgXOsq",
       amount: totalPriceFunc() * 100,
       currency: "INR",
-      name: "MyShop Checkout",
+      name: "Vet&Meet Checkout",
       description: "This is your order",
       image:
         "https://www.mintformations.co.uk/blog/wp-content/uploads/2020/05/shutterstock_583717939.jpg",
       theme: {
-        color: "#000",
+        color: "#FFA726",
       },
       handler: function (response) {
         alert(`Payment Successful! Payment ID: ${response.razorpay_payment_id}`);
