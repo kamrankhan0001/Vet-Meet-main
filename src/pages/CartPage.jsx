@@ -5,24 +5,45 @@ import { useNavigate } from 'react-router-dom';
 
 const CartPage = () => {
   const { cartItems, removeFromCart, updateQuantity, getCartTotalPrice } = useCart();
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   if (cartItems.length === 0) {
     return (
-      <div className="container mx-auto p-6 text-center mt-16">
-        <h2 className="text-3xl font-bold mb-3 text-gray-800">Your Cart is Empty</h2>
-        <p className="text-gray-600">Looks like you haven't added anything yet.</p>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-4">
+      <div className="bg-white p-8 rounded-lg shadow-xl text-center max-w-md w-full">
+        <svg
+          className="mx-auto h-24 w-24 text-green-500"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+          ></path>
+        </svg>
+        <h2 className="text-3xl font-bold text-gray-800 mt-6 mb-3">Order Confirmed!</h2>
+        <p className="text-gray-600 mb-6">
+          Thank you for your purchase. Your order has been placed successfully.
+          You will receive an email confirmation shortly.
+        </p>
         <button
-          onClick={() => window.history.back()}
-          className="mt-6 bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg transition-all duration-300"
+          onClick={() => navigate('/')}
+          className="bg-orange-500 text-white py-3 px-8 rounded-md text-lg font-semibold hover:bg-orange-600 transition duration-300"
         >
           Continue Shopping
         </button>
       </div>
+    </div>
+  
     );
   }
-const handleProceedToCheckout = () => {
-    navigate('/checkout'); // Navigate to the new payment gateway page
+
+ const handleProceedToCheckout = () => {
+    navigate('/checkout'); // Navigate to the payment gateway page
   };
 
   return (
@@ -37,7 +58,7 @@ const handleProceedToCheckout = () => {
           >
             <div className="w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0">
               <img
-                src={item.image || '/placeholder.jpeg'}
+                src={item.image || 'https://placehold.co/100x100/CCCCCC/FFFFFF?text=Product'} // Fallback placeholder
                 alt={item.name}
                 className="w-full h-full object-cover rounded-lg border"
               />
@@ -98,7 +119,10 @@ const handleProceedToCheckout = () => {
         <div className="text-2xl font-bold text-gray-800">
           Total: ₹{getCartTotalPrice().toFixed(2)}
         </div>
-        <button onClick={handleProceedToCheckout} className="bg-green-600 text-white text-lg font-semibold px-6 py-3 rounded-lg hover:bg-green-700 transition-all duration-300 w-full sm:w-auto">
+        <button
+          onClick={handleProceedToCheckout}
+          className="bg-green-600 text-white text-lg font-semibold px-6 py-3 rounded-lg hover:bg-green-700 transition-all duration-300 w-full sm:w-auto"
+        >
           Proceed to Checkout
         </button>
       </div>
@@ -107,3 +131,6 @@ const handleProceedToCheckout = () => {
 };
 
 export default CartPage;
+
+
+

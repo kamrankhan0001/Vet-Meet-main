@@ -25,10 +25,6 @@ import HenloProductListing from './Components/HenloProductListing';
 import { CartProvider } from "./context/CartContext";
 import CartPage from "./pages/CartPage";
 import PaymentGatewayPage from './pages/PaymentGatewayPage';
-import PaymentPage from "./pages/PaymentPage";
-
-
-
 
 
 const allArticles = [
@@ -107,14 +103,8 @@ const App = () => {
           <Route path="/henlo-products" element={<HenloProductListing />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/checkout" element={<PaymentGatewayPage />} />
-          <Route path="/payment" element={<PaymentPage />} />
-          
-          
-          
-          
-          
-
-          
+        
+                    
       </Routes>
 
       {/* BOOK APPOINTMENT MODAL - Moved here to be controlled by App's state */}

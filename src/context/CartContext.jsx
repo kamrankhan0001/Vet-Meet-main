@@ -18,6 +18,7 @@ export const CartProvider = ({ children }) => {
           item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
         );
       } else {
+        //const price = parseFloat(product.currentPrice.replace(/[^0-9.-]+/g, ""));
         return [...prevItems, { ...product, quantity: 1 }];
       }
     });
@@ -35,6 +36,10 @@ export const CartProvider = ({ children }) => {
     );
   };
 
+  const clearCart = () => { // New function to clear the cart
+    setCartItems([]);
+  };
+
   const getCartTotalItems = () => {
     return cartItems.reduce((total, item) => total + item.quantity, 0);
   };
@@ -50,6 +55,7 @@ export const CartProvider = ({ children }) => {
         addToCart,
         removeFromCart,
         updateQuantity,
+        clearCart,
         getCartTotalItems,
         getCartTotalPrice,
       }}
