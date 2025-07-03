@@ -25,6 +25,7 @@ import HenloProductListing from './Components/HenloProductListing';
 import { CartProvider } from "./context/CartContext";
 import CartPage from "./pages/CartPage";
 import PaymentGatewayPage from './pages/PaymentGatewayPage';
+import PharmacySection from "./Components/PharmacySection"; // Assuming this is the pharmacy section component
 
 
 const allArticles = [
@@ -103,6 +104,7 @@ const App = () => {
           <Route path="/henlo-products" element={<HenloProductListing />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/checkout" element={<PaymentGatewayPage />} />
+          <Route path="/pharmacy" element={<PharmacySection />} />
         
                     
       </Routes>

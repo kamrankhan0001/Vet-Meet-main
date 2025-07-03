@@ -237,7 +237,9 @@ const PaymentGatewayPage = () => {
                 onChange={handleChange}
               />
               <input
-                name="state"
+                type='text'
+                name="State"
+                placeholder="State"
                 className="block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-orange-500 focus:border-orange-500"
                 value={formData.state}
                 onChange={handleChange}

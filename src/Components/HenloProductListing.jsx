@@ -335,10 +335,10 @@ const HenloProductListing = () => {
 
         {/* Product Listing Grid */}
         <div className="w-full md:w-3/4 lg:w-4/5 md:pl-6">
-          {/* ICICI Bank Banner */}
-          <div className="bg-gradient-to-r from-red-500 to-orange-500 text-white p-3 rounded-lg flex items-center justify-center text-sm md:text-base font-semibold mb-6">
-            <img src="https://cdn.shopify.com/s/files/1/0530/5095/0603/files/ICICI_Bank_Logo_1_30x.png?v=1678199347" alt="ICICI Bank" className="h-6 mr-2" />
-            ICICI Bank Extra 5% OFF
+        
+        {/* Ad Banner - Example from image */}
+          <div className="bg-orange-400 border border-yellow-300 p-4 rounded-lg mb-6 text-center text-lg font-semibold text-white">
+            ICICI Bank Extra 5% off On ICICI Bank Credit/Debit Cards & EMI* T&C
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">

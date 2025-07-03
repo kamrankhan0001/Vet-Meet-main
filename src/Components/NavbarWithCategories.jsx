@@ -312,6 +312,9 @@ export default function NavbarWithCategories() {
     else if (categoryName === "Henlo") { // Add this condition
       navigate("/henlo-products"); // Navigate to the new Henlo product listing page
     }
+    else if (categoryName === "Pharmacy") {
+      navigate("/pharmacy"); // Navigate to the pharmacy section
+    }
     if (drawerOpen) {
       setDrawerOpen(false);
     }
