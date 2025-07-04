@@ -11,23 +11,27 @@ const Footer = () => {
             Online Shopping
           </h3>
           <ul className="space-y-2 text-sm">
+            
             <li>
-              <a href="#">Dogs</a>
+              <Link to="/">Dogs</Link>
             </li>
+
             <li>
-              <a href="#">Cats</a>
+              <Link to="/">Cats</Link>
             </li>
             <li>
               <a href="#">Small Pets</a>
             </li>
+            
             <li>
-              <a href="#">Consult a Vet</a>
+              <Link to="/consult-a-vet">Consult a Vet</Link>
             </li>
             <li>
               <a href="#">Dog Behaviour</a>
             </li>
+            
             <li>
-              <a href="#">Pet Pharmacy</a>
+              <Link to="/pharmacy">Pet Pharmacy</Link>
             </li>
           </ul>
         </div>

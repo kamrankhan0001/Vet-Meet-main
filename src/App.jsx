@@ -25,8 +25,8 @@ import HenloProductListing from './Components/HenloProductListing';
 import { CartProvider } from "./context/CartContext";
 import CartPage from "./pages/CartPage";
 import PaymentGatewayPage from './pages/PaymentGatewayPage';
-import PharmacySection from "./Components/PharmacySection"; // Assuming this is the pharmacy section component
-
+import PharmacySection from "./Components/PharmacySection"; 
+import Footer from "./Components/Footer"; 
 
 const allArticles = [
   {
@@ -166,6 +166,8 @@ const App = () => {
           </div>
         </div>
       )}
+
+      <Footer />
 </CartProvider>
     </Router>
   );

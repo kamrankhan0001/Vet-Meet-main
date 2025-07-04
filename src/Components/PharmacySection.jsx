@@ -191,6 +191,26 @@ const PharmacySection = () => {
           ]}
         />
         </div>
+        <section className="mb-10">
+  <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">Healthcare</h2>
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
+    {categoryBannersData.map((category, index) => (
+      <div
+        key={index}
+        className="bg-white rounded-xl shadow-md hover:shadow-lg transition-transform hover:-translate-y-1 cursor-pointer"
+      >
+        <img
+          src={category.image}
+          alt={category.name}
+          className="w-full h-24 md:h-32 object-cover rounded-t-xl"
+        />
+        <p className="text-center text-sm md:text-base font-semibold text-gray-700 py-2">
+          {category.name}
+        </p>
+      </div>
+    ))}
+  </div>
+</section>
 
         
 

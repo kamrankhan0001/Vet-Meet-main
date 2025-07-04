@@ -4,7 +4,7 @@ import CategoriesGrid from "../Components/CategoriesGrid";
 import HealthProducts from "../Components/HealthProducts";
 import HealthTipsSection from "../Components/HealthTipsSection";
 import PetFoodList from "../Components/PetFoodList";
-import Footer from "../Components/Footer";
+//import Footer from "../Components/Footer";
 import DogBreeds from "../Components/DogBreeds";
 import PetBrands from "../Components/PetBrands";
 import SingleBanner from "../Components/SingleBanner";
@@ -27,7 +27,7 @@ const HomePage = () => {
       <ToysProducts />
       <HealthTipsSection />     
       <PetSuppliesSection /> 
-      <Footer />
+      
       
     </>
   );
