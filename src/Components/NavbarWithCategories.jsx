@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import VetAndMeetPage from "../pages/VetAndMeetPage"; // Adjust the path as needed
+
 import {
   FaUser,
   FaShoppingCart,
@@ -247,12 +247,20 @@ const categories = [
   { name: "Shop By Breed", subCategories: ["Labrador", "Persian Cat"] },
   {
     name: "Consult a Vet",
+    path: "/consult",
     subCategories: [
-      { name: "Book Appointment", path: "/consult-a-vet?action=book" },
+      { name: "Book Appointment", path: "/consult" },
       { name: "Online Chat", path: "/consult-a-vet?action=chat" }
     ]
   },
-  { name: "Vet&Meet Clinic ", subCategories: ["Health Plans", "Checkups"] },
+  {
+    name: "Vet&Meet Clinic", 
+    path: "/clinic", 
+    subCategories: [
+      {name: "Vet&Meet Clinic", path: "/clinic"}, 
+      {name: "Checkup", path: "/clinic/checkup"}, 
+    ]
+  },
   { name: "Summer Sale", subCategories: ["Discounted Items", "Bundles"] },
 ];
 
@@ -296,7 +304,7 @@ export default function NavbarWithCategories() {
         setDrawerOpen(false);
       }
     } else {
-      // This handles plain string sub-categories
+     
       console.log(`Clicked on string: ${item}`);
       setDrawerOpen(false);
     }
@@ -305,15 +313,21 @@ export default function NavbarWithCategories() {
   // New handler for top-level category clicks
   const handleMainCategoryClick = (categoryName) => {
     if (categoryName === "Cats" || categoryName === "Dogs") {
-      navigate("/"); // Navigate to the home page
+      navigate("/"); 
     } else if (categoryName === "Consult a Vet") {
-      navigate("/consult-a-vet");
+      
+      navigate("/consult"); 
     }
-    else if (categoryName === "Henlo") { // Add this condition
-      navigate("/henlo-products"); // Navigate to the new Henlo product listing page
+    else if (categoryName === "Henlo") { 
+      navigate("/henlo-products"); 
     }
     else if (categoryName === "Pharmacy") {
-      navigate("/pharmacy"); // Navigate to the pharmacy section
+      navigate("/pharmacy"); 
+    }
+
+    else if (categoryName === "Vet&Meet Clinic") {
+      navigate("/clinic"); 
+
     }
     if (drawerOpen) {
       setDrawerOpen(false);
@@ -322,9 +336,9 @@ export default function NavbarWithCategories() {
   };
 
   const handleCartClick = () => {
-    navigate('/cart'); // Navigate to the dedicated cart page
+    navigate('/cart'); 
     if (drawerOpen) {
-      setDrawerOpen(false); // Close drawer if open
+      setDrawerOpen(false); 
     }
   };
 

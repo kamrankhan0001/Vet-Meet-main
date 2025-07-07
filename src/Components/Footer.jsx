@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-amber-400 text-black py-10 my-2 ">
       <div className="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-        {/* Online Shopping */}
+        
         <div>
           <h3 className="text-lg sm:text-xl font-semibold mb-4">
             Online Shopping
@@ -36,25 +36,24 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Explore */}
+        
         <div>
           <h3 className="text-lg sm:text-xl font-semibold mb-4">Explore</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="#">Vet&Meet+ Clinic</a>
+              <Link to = "/clinic">Vet&Meet Clinics</Link>
             </li>
-            {/* <li>
-              <a href="#">Our Story</a>
-            </li> */}
+            
+           
             <li>
-              {/* Changed this line to Link to the Our Story page */}
+              
               <Link to="/our-story">Our Story</Link>
             </li>
             <li>
               <a href="#">FAQs</a>
             </li>
             <li>
-              {/* Changed this line to Link to the blog page */}
+             
               <Link to="/blog">Blog</Link>
             </li>
 
@@ -70,7 +69,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Quick Links */}
+        
         <div>
           <h3 className="text-lg sm:text-xl font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2 text-sm">
@@ -78,7 +77,7 @@ const Footer = () => {
               <a href="#">My Account</a>
             </li>
             <li>
-              {/* This is the line to change */}
+              
               <Link to="/my-orders">Track Your Order</Link> 
             </li>
             
@@ -88,19 +87,19 @@ const Footer = () => {
               <Link to="/refund-policy">Refund Policy</Link>
             </li>
             <li>
-              {/* Changed this line to Link to the refund policy page */}
+              
               <Link to="/refund-policy">Return Policy</Link>
             </li>
             <li>
-              {/* Changed this line to Link to the privacy policy page */}
+              
               <Link to="/privacy-policy">Privacy Policy</Link>
             </li>
             <li>
-              {/* Changed this line to Link to the terms of use page */}
+              
               <Link to="/terms-of-use">Terms of Use</Link>
             </li>
-<li>
-              {/* Changed this line to Link to the refer and save page */}
+           <li>
+              
               <Link to="/refer-and-save">Refer and Save</Link>
             </li>
           </ul>
@@ -130,7 +129,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Popular Searches */}
+      
       <div className="px-4 mt-10 max-w-full overflow-x-hidden overflow-y-hidden">
         <h2 className="text-xl sm:text-2xl font-semibold mb-4">
           Popular Searches

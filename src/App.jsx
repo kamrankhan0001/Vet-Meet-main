@@ -20,13 +20,16 @@ import Tip4 from "./assets/Health/HealthTip4.png";
 import Tip5 from "./assets/Health/HealthTip5.png";
 import ProductListingPage from "./pages/ProductListingPage";
 import CatFoodListingPage from "./pages/CatFoodListingPage";
-import VetAndMeetPage from './pages/VetAndMeetPage';
+//import VetAndMeetPage from './pages/VetAndMeetPage';
 import HenloProductListing from './Components/HenloProductListing'; 
 import { CartProvider } from "./context/CartContext";
 import CartPage from "./pages/CartPage";
 import PaymentGatewayPage from './pages/PaymentGatewayPage';
 import PharmacySection from "./Components/PharmacySection"; 
 import Footer from "./Components/Footer"; 
+import PetConsultation from "./Components/PetConsultation";
+import BookConsult from "./Components/BookConsult";
+import ClinicPage from './pages/ClinicPage'; 
 
 const allArticles = [
   {
@@ -96,17 +99,19 @@ const App = () => {
         <Route path="/our-story" element={<OutStoryPage />} />
         <Route path="/products/dog-food" element={<ProductListingPage />} />
         <Route path="/products/cat-food" element={<CatFoodListingPage />} />
-        <Route
+        {/* <Route
             path="/consult-a-vet"
             element={<VetAndMeetPage toggleAppointmentModal={toggleAppointmentModal} />}
-          />
+          /> */}
 
           <Route path="/henlo-products" element={<HenloProductListing />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/checkout" element={<PaymentGatewayPage />} />
           <Route path="/pharmacy" element={<PharmacySection />} />
-        
-                    
+          <Route path="/consult" element={<PetConsultation />} />
+          <Route path="/BookConsult" element={<BookConsult />} />
+          <Route path="/clinic" element={<ClinicPage  toggleAppointmentModal={toggleAppointmentModal}/>} />
+                   
       </Routes>
 
       {/* BOOK APPOINTMENT MODAL - Moved here to be controlled by App's state */}
