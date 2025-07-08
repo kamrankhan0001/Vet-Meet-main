@@ -350,11 +350,11 @@ const PharmacySection = () => {
             alt={concern.name}
             className="h-full w-full object-contain rounded-t-full shadow-md hover:scale-105 transition-transform duration-300"
             loading="lazy"
-            
+
           />
         </div>
 
-        {/* Label */}
+        
         <p className="font-bold text-center text-gray-700 text-sm mt-4">
           {concern.name}
         </p>
