@@ -37,6 +37,21 @@ import sup5 from '../assets/Pharmacy/sup5.png';
 import sup6 from '../assets/Pharmacy/sup6.png';
 import sup7 from '../assets/Pharmacy/sup7.png';
 import sup8 from '../assets/Pharmacy/sup8.png';
+import prs1 from '../assets/Pharmacy/prs1.png';
+import prs2 from '../assets/Pharmacy/prs2.png';
+import prs3 from '../assets/Pharmacy/prs3.png';
+import prs4 from '../assets/Pharmacy/prs4.png';
+import prs5 from '../assets/Pharmacy/prs5.png';
+import prs6 from '../assets/Pharmacy/prs6.png';
+import prs7 from '../assets/Pharmacy/prs7.png';
+import prs8 from '../assets/Pharmacy/prs8.png';
+import concern1 from '../assets/Pharmacy/concern1.png';
+import concern2 from '../assets/Pharmacy/concern2.png';
+import concern3 from '../assets/Pharmacy/concern3.png';
+import concern4 from '../assets/Pharmacy/concern4.png';
+import concern5 from '../assets/Pharmacy/concern5.png';
+
+
 
 const PharmacySection = () => {
   const navigate = useNavigate();
@@ -72,6 +87,21 @@ const PharmacySection = () => {
     {name: 'Antibiotics', image: Health14 }
 
   ];
+
+  const categoryPrescriptionData = [
+    
+    { name: 'Skin & coat care', image: prs2 },
+    {name: 'Joint care', image: prs3 },
+    { name: 'Kidney care', image: prs1 },
+    { name: 'Liver care', image: prs4 },
+    { name: 'Growth support', image: prs5 },
+    {name: 'Diabetic support', image: prs7 },
+    { name: 'Digestive care', image: prs6 },
+    {name: 'Weight management', image: prs8 },
+  
+  ];
+    
+
 
   const supplements = [
             { name: 'Appetite stimulant', image: sup8 },
@@ -248,7 +278,7 @@ const PharmacySection = () => {
 <section className="mb-10">
   <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">Prescription Diet</h2>
   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
-    {categoryPreventiveData.map((category, index) => (
+    {categoryPrescriptionData.map((category, index) => (
       <div
         key={index}
         className="bg-white rounded-xl shadow-md hover:shadow-lg transition-transform hover:-translate-y-1 cursor-pointer"
@@ -296,9 +326,46 @@ const PharmacySection = () => {
       </div>
     </section>
 
+    <section className="mb-16 px-2 md:px-6 lg:px-20 bg-blue-300 py-10 rounded-t-2xl shadow-lg">
+  <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-800">
+    Shop by Concern
+  </h2>
+
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+    {[
+      { name: "Shedding", img: concern4 },
+      { name: "Loose Stool", img: concern1 },
+      { name: "Itching", img: concern2 },
+      { name: "Scooting", img: concern3 },
+      { name: "Limping", img: concern5 },
+    ].map((concern, index) => (
+      <div
+        key={index}
+        className="bg-white rounded-2xl shadow hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col items-center pt-6 pb-4 "
+      >
+        {/* Image */}
+        <div className="h-40 w-40 flex justify-center items-center">
+          <img
+            src={concern.img}
+            alt={concern.name}
+            className="h-full w-full object-contain rounded-t-full shadow-md hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+
+        {/* Label */}
+        <p className="font-bold text-center text-gray-700 text-sm mt-4">
+          {concern.name}
+        </p>
+      </div>
+    ))}
+  </div>
+</section>
+
+
 
         {/* Pharmacy Highlights Section */}
-         <section className="py-12 bg-white rounded-lg shadow-md mb-8">          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-center">Why choose Vet&Meet Pharmacy?</h2>
+         <section className="py-12 bg-white rounded-lg shadow-md mb-8">          
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-center">Why choose Vet&Meet Pharmacy?</h2>
            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
             {highlightsData.map((highlight, index) => (
               <div key={index} className="flex flex-col items-center text-center p-4">
@@ -318,12 +385,12 @@ const PharmacySection = () => {
           <p className="text-lg opacity-90">
             Join our growing family and experience the best in pet care.
           </p>
-          <button className="mt-6 bg-white text-orange-600 font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors transform hover:scale-105">
+          <button className="mt-6 bg-white text-orange-400 font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors transform hover:scale-105">
             Read Our Stories
           </button>
         </section>
 
-        {/* Additional Product Sections and Highlights */}
+    
         {/* ...reuse ProductTypeSectionContent and add Pharmacy Highlights here as above... */}
       </main>
     </div>

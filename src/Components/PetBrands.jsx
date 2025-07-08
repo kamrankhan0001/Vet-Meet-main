@@ -40,7 +40,7 @@ const PetBrands = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
             whileHover={{ scale: 1.03 }}
-            className="w-[180px] h-[240px] flex-shrink-0 border-[6px] border-orange-400 rounded-[30px] bg-white shadow-md overflow-hidden"
+            className="w-[180px] h-[240px] flex-shrink-0 border-[6px] border-blue-300 rounded-[30px] bg-white shadow-md overflow-hidden"
           >
             <img
               src={product.image}

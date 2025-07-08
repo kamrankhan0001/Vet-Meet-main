@@ -182,7 +182,7 @@ const ClinicPage = ({ toggleAppointmentModal }) => {
             </p>
                <button
                  onClick={toggleAppointmentModal}
-                 className="bg-white text-teal-700 hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer"
+                 className="bg-orange-300 text-white hover:bg-orange-400 font-bold py-3 px-6 rounded-full text-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer"
                >
                  Book an Appointment
                </button>
