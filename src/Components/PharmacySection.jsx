@@ -349,6 +349,8 @@ const PharmacySection = () => {
             src={concern.img}
             alt={concern.name}
             className="h-full w-full object-contain rounded-t-full shadow-md hover:scale-105 transition-transform duration-300"
+            loading="lazy"
+            
           />
         </div>
 
