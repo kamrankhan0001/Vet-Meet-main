@@ -189,7 +189,11 @@ const ClinicPage = ({ toggleAppointmentModal }) => {
                
              </div>
              <div className="md:w-1/2 flex justify-center">
-               <img src={Doctor1} alt="Vet Consultation" className="rounded-lg w-full max-w-sm" />
+               <img src={Doctor1} alt="Vet Consultation" className="rounded-lg w-full max-w-sm"
+                  loading="lazy"
+               
+               />
+
              </div>
            </div>
            <div className="absolute top-0 left-0 w-full h-full">
@@ -295,11 +299,13 @@ const ClinicPage = ({ toggleAppointmentModal }) => {
               src={service.image}
               alt={service.title}
               className="w-full h-full object-cover"
+              loading="lazy"
             />
             <img
               src="https://placehold.co/60x20/FFFFFF/000000?text=FearFree"
               alt="FearFree Certified"
               className="absolute top-3 left-3 h-5"
+              loading="lazy"
             />
           </div>
 
