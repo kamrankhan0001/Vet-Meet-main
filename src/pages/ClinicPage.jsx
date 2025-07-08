@@ -171,10 +171,10 @@ const ClinicPage = ({ toggleAppointmentModal }) => {
       </Helmet>
 
       {/* Hero Section */}
-         <section className="relative bg-teal-500 text-white py-10 md:py-8 overflow-hidden">
+         <section className="relative bg-blue-300 text-gray-800 py-10 md:py-8 overflow-hidden">
            <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between relative z-10">
              <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
-               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
+               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-4 drop-shadow-lg">
               Expert Care for Your Beloved Pet
             </h1>
                <p className="text-lg md:text-xl mb-8 opacity-90">
@@ -182,7 +182,7 @@ const ClinicPage = ({ toggleAppointmentModal }) => {
             </p>
                <button
                  onClick={toggleAppointmentModal}
-                 className="bg-orange-300 text-white hover:bg-orange-400 font-bold py-3 px-6 rounded-full text-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer"
+                 className="bg-orange-400 text-white hover:bg-orange-500 font-bold py-3 px-6 rounded-full text-lg shadow-lg transform hover:scale-105 transition duration-300 cursor-pointer"
                >
                  Book an Appointment
                </button>
@@ -224,7 +224,7 @@ const ClinicPage = ({ toggleAppointmentModal }) => {
     
     
       {/* NEW SECTION: Care at Clinic */}
-<section className="py-8 bg-blue-50">
+<section className="py-8 bg-blue-300 rounded-2xl shadow-lg">
   <div className="container mx-auto px-4">
     <h2 className="text-xl md:text-3xl font-bold text-gray-800 mb-3 text-center">
       Care at Clinic
