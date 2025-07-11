@@ -30,6 +30,8 @@ import Footer from "./Components/Footer";
 import PetConsultation from "./Components/PetConsultation";
 import BookConsult from "./Components/BookConsult";
 import ClinicPage from './pages/ClinicPage'; 
+import OfferPage from "./Components/OfferPage";
+import HenloSection from "./Components/HenloSection";
 
 const allArticles = [
   {
@@ -111,6 +113,8 @@ const App = () => {
           <Route path="/consult" element={<PetConsultation />} />
           <Route path="/BookConsult" element={<BookConsult />} />
           <Route path="/clinic" element={<ClinicPage  toggleAppointmentModal={toggleAppointmentModal}/>} />
+          <Route path="/offers" element={<OfferPage />} />
+          <Route path="/henlo" element={<HenloSection />} />
                    
       </Routes>
 
