@@ -1,37 +1,3 @@
-// import React from "react";
-// import desktopImage from "../assets/banner/FEED.png";
-// import mobileImage from "../assets/banner/MFEED.png";
-
-
-// const SingleBanner = () => {
-//   return (
-//     <div className="w-full mt-0.5 h-[400px] sm:h-[300px] md:h-[500px] flex items-center justify-center relative overflow-hidden rounded-lg">
-//       {/* Decorative Circles */}
-//       <div className="absolute w-20 h-20 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-white opacity-10 rounded-full -top-8 -left-8"></div>
-//       <div className="absolute w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 bg-white opacity-10 rounded-full -bottom-8 -right-8"></div>
-
-//       {/* Mobile Image */}
-//       <img
-//         src={mobileImage}
-//         alt="Mobile Banner"
-//         className="block md:hidden w-full h-full object-cover px-2"
-//       />
-
-//       {/* Desktop Image */}
-//       <img
-//         src={desktopImage}
-//         alt="Desktop Banner"
-//         className="hidden md:block w-full h-full object-contain px-4"
-//       />
-      
-
-//     </div>
-//   );
-// };
-
-// export default SingleBanner;
-
-
 import { useState, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 
@@ -43,56 +9,50 @@ import card5 from "../assets/banner/card5.jpeg";
 import card6 from "../assets/banner/card6.jpeg";
 import card7 from "../assets/banner/card7.jpeg";
 import card8 from "../assets/banner/card8.jpeg";
-//import a1 from "../assets/banner/a1.jpeg";
 
 function BannerSection() {
   const banners = [card1, card2, card3, card4, card5, card6, card7, card8];
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Next banner
   const nextBanner = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % banners.length);
   };
 
-  // Previous banner
   const prevBanner = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? banners.length - 1 : prevIndex - 1
     );
   };
 
-  // Auto play every 8 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       nextBanner();
     }, 8000);
-
     return () => clearInterval(interval);
-  }, []); // Run once on mount
+  }, []);
 
-  // Swipe handlers
   const handlers = useSwipeable({
-    onSwipedLeft: () => nextBanner(),
-    onSwipedRight: () => prevBanner(),
+    onSwipedLeft: nextBanner,
+    onSwipedRight: prevBanner,
     preventDefaultTouchmoveEvent: true,
     trackMouse: true,
   });
 
   return (
+    <div className="relative mt-5" {...handlers}>
+      <div className="w-full relative overflow-hidden flex items-center justify-center rounded-lg">
+        {/* Image as actual element (dynamic height) */}
+        <img
+          src={banners[currentIndex]}
+          alt={`Banner ${currentIndex + 1}`}
+          loading="lazy"
+          className="w-full h-auto object-cover max-h-[500px]" // sets height based on image size
+        />
 
-   <div className="relative" {...handlers}>
-      {/* Banner image */}
-      <div
-        className="w-full h-48 sm:h-72 md:h-96 bg-contain bg-center mt-5 bg-no-repeat"
-        style={{ backgroundImage: `url(${banners[currentIndex]})` }}
-      >
-    
-    
         {/* Navigation Buttons */}
         <div className="absolute inset-0 flex justify-between items-center px-4">
-          {/* Previous Button */}
           <button
-            className="bg-white text-black p-2 rounded-full shadow-lg block"
+            className="bg-white text-black p-2 rounded-full shadow-lg"
             onClick={prevBanner}
             aria-label="Previous Banner"
           >
@@ -112,9 +72,8 @@ function BannerSection() {
             </svg>
           </button>
 
-          {/* Next Button */}
           <button
-            className="bg-white text-black p-2 rounded-full shadow-lg block"
+            className="bg-white text-black p-2 rounded-full shadow-lg"
             onClick={nextBanner}
             aria-label="Next Banner"
           >
@@ -154,6 +113,3 @@ function BannerSection() {
 }
 
 export default BannerSection;
-
-
-
