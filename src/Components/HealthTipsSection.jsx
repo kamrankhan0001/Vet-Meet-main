@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 
 import Tip1 from "../assets/Health/HealthTip1.png";
 import Tip2 from "../assets/Health/HealthTip2.png";
@@ -42,48 +42,47 @@ const articles = [
 ];
 
 const HealthTipsSection = () => {
-  // Helper to create a URL-friendly slug from the title
   const createSlug = (title) => {
     return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
   };
 
   return (
-    <div className="bg-white py-10 px-4 sm:px-6 lg:px-8">
-      <h2 className="text-3xl font-bold text-center text-orange-600 mb-8">
+    <section className="bg-gradient-to-br from-[#fffdf4] to-[#fff9ee] py-14 px-4 sm:px-6 lg:px-8">
+      <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-orange-600 mb-10">
         🐾 Health Tips by Experts
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {articles.map((article, index) => (
           <div
             key={index}
-            className="bg-amber-300 p-6 rounded-xl shadow hover:shadow-lg transition"
+            className="bg-white p-4 sm:p-5 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-orange-100"
           >
             <img
               src={article.image}
               alt={article.title}
-              className="w-full h-50 object-cover rounded-lg mb-4"
+              className="w-full h-40 object-cover rounded-lg mb-3"
             />
-            <h3 className="text-xl font-semibold text-gray-800 mb-3">
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-800 leading-snug mb-2">
               {article.title}
             </h3>
-            
             <Link
-              to={`/health-tips/${createSlug(article.title)}`} 
-              className="inline-block mt-2 bg-orange-400 hover:bg-blue-600 text-white px-4 py-2 rounded-full"
+              to={`/health-tips/${createSlug(article.title)}`}
+              className="inline-block mt-2 bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium px-4 py-2 rounded-md transition"
             >
               {article.button}
             </Link>
           </div>
         ))}
       </div>
-      <div className="flex justify-center mt-8">
-        <button className="text-orange-600 underline hover:text-orange-800 font-medium">
+
+      <div className="flex justify-center mt-10">
+        <button className="text-orange-500 hover:text-orange-600 font-medium underline text-base">
           View More →
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 
 export default HealthTipsSection;
-

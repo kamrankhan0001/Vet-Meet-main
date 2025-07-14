@@ -26,11 +26,89 @@ const ClinicPage = ({ toggleAppointmentModal }) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const features = [
+    {
+      icon: (
+        // Placeholder for a 3D-style head/brain icon with a checkmark
+        <svg className="w-16 h-16 text-blue-500 mb-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+          <path fill="url(#gradient1)" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+          <defs>
+            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#60A5FA" />
+              <stop offset="100%" stopColor="#3B82F6" />
+            </linearGradient>
+          </defs>
+        </svg>
+      ),
+      title: 'Thoughtfully designed spaces',
+      description: 'Pet-friendly interiors, separate spaces for cats & dogs, safe anti-slip floors',
+    },
+    {
+      icon: (
+        // Placeholder for a 3D-style heart with a paw print
+        <svg className="w-16 h-16 text-red-500 mb-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+          <path fill="url(#gradient2)" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+          <circle cx="10" cy="12" r="1.5" fill="#fff" />
+          <circle cx="14" cy="12" r="1.5" fill="#fff" />
+          <circle cx="12" cy="10" r="1.5" fill="#fff" />
+          <defs>
+            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#EF4444" />
+              <stop offset="100%" stopColor="#DC2626" />
+            </linearGradient>
+          </defs>
+        </svg>
+      ),
+      title: 'Experts who love pets',
+      description: 'Fear-free certified, our compassionate team makes pet care feel stress-free and personal',
+    },
+    {
+      icon: (
+        // Placeholder for a 3D-style document/records icon with a paw print
+        <svg className="w-16 h-16 text-green-500 mb-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+          <path fill="url(#gradient3)" d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+          <circle cx="12" cy="14" r="2" fill="#fff" />
+          <path d="M14 16h-4v-4h4v4z" fill="#fff" />
+          <defs>
+            <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#22C55E" />
+              <stop offset="100%" stopColor="#16A34A" />
+            </linearGradient>
+          </defs>
+        </svg>
+      ),
+      title: 'Digital records',
+      description: 'Easily accessible records (in-app), because you’ve got enough to juggle',
+    },
+    {
+      icon: (
+        // Placeholder for a 3D-style house icon with a checkmark
+        <svg className="w-16 h-16 text-yellow-500 mb-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+          <path fill="url(#gradient4)" d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+          <circle cx="18" cy="6" r="3" fill="#fff" />
+          <path d="M17 7l1.41 1.41L21 5.83l-1.41-1.41L17 7z" fill="#fff" />
+          <defs>
+            <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#F59E0B" />
+              <stop offset="100%" stopColor="#D97706" />
+            </linearGradient>
+          </defs>
+        </svg>
+      ),
+      title: 'No rushed checkups',
+      description: 'We spend 3x longer with your pet, for real, comprehensive care.',
+    },
+  ];
+
   // Data for sections
   const clinicFeatures = [
     {
       icon: (
-        <svg className="w-12 h-12 text-teal-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-12 h-12 text-orange-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
         </svg>
       ),
@@ -39,7 +117,7 @@ const ClinicPage = ({ toggleAppointmentModal }) => {
     },
     {
       icon: (
-        <svg className="w-12 h-12 text-teal-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-12 h-12 text-orange-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
         </svg>
       ),
@@ -48,7 +126,7 @@ const ClinicPage = ({ toggleAppointmentModal }) => {
     },
     {
       icon: (
-        <svg className="w-12 h-12 text-teal-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-12 h-12 text-orange-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
         </svg>
       ),
@@ -57,7 +135,7 @@ const ClinicPage = ({ toggleAppointmentModal }) => {
     },
     {
       icon: (
-        <svg className="w-12 h-12 text-teal-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-12 h-12 text-orange-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
         </svg>
       ),
@@ -341,25 +419,62 @@ const ClinicPage = ({ toggleAppointmentModal }) => {
 </section>
 
 
+<section className="py-16 bg-white">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2 text-center">
+          Designed for what pets truly need
+        </h2>
+        <p className="text-lg md:text-xl text-gray-600 mb-12 text-center">
+          Backed by fear-free certified expert care
+        </p>
 
-
-      {/* Existing Clinic Features Section */}
-      <section className="py-16 bg-white shadow-inner">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-12 text-center">
-            Why Choose Vet&Meet Clinic?
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {clinicFeatures.map((feature, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-lg shadow-md text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+          {features.map((feature, index) => (
+            <div key={index} className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left">
+              <div className="flex-shrink-0 mb-4 sm:mb-0 sm:mr-6">
                 {feature.icon}
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
               </div>
-            ))}
-          </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
+
+      <section className="py-14 bg-gradient-to-br from-[#f9fbff] to-[#fff] shadow-inner">
+  <div className="container mx-auto px-4">
+    <h2 className="text-2xl sm:text-3xl font-extrabold text-center text-gray-800 mb-10">
+      Why Choose <span className="text-blue-600">Vet&Meet Clinic?</span>
+    </h2>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 lg:grid-cols-4">
+      {clinicFeatures.map((feature, index) => (
+        <div
+          key={index}
+          className="bg-white p-4 sm:p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-transform hover:scale-[1.02] text-center"
+        >
+          <div className="w-12 h-6 mx-auto mb-3 flex items-center justify-center rounded-full bg-white shadow-inner ">
+            {feature.icon}
+          </div>
+          <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-1">
+            {feature.title}
+          </h3>
+          <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+            {feature.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
 
       {/* Call to Action / Booking Section */}

@@ -42,7 +42,7 @@ const ToysProducts = () => {
               className="relative w-[200px] min-w-[200px] bg-white rounded-2xl shadow-md p-4 flex-shrink-0 hover:shadow-xl transition duration-300"
             >
               {/* Discount Badge */}
-              <span className="absolute top-3 left-3 bg-gray-800 text-white text-xs font-semibold px-2 py-0.5 rounded-md shadow-sm">
+              <span className="absolute top-3 left-3 bg-orange-400 text-white text-xs font-semibold px-2 py-0.5 rounded-md shadow-sm">
                 {item.discount}
               </span>
 
@@ -67,7 +67,7 @@ const ToysProducts = () => {
 
       {/* CTA Button */}
       <div className="text-center mt-5">
-        <button className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-5 py-2 rounded-full shadow-md transition">
+        <button className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-5 py-2 rounded-lg shadow-md transition">
           Shop Now 
         </button>
       </div>

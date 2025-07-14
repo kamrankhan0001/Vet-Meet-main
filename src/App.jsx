@@ -32,6 +32,8 @@ import BookConsult from "./Components/BookConsult";
 import ClinicPage from './pages/ClinicPage'; 
 import OfferPage from "./Components/OfferPage";
 import HenloSection from "./Components/HenloSection";
+import FashionSection from "./Components/FashionSection";
+import OfferCardSection from "./Components/OfferCardSection";
 
 const allArticles = [
   {
@@ -115,6 +117,8 @@ const App = () => {
           <Route path="/clinic" element={<ClinicPage  toggleAppointmentModal={toggleAppointmentModal}/>} />
           <Route path="/offers" element={<OfferPage />} />
           <Route path="/henlo" element={<HenloSection />} />
+          <Route path="/fashion" element={<FashionSection />} /> 
+          <Route path="/offers-card" element={<OfferCardSection />} />
                    
       </Routes>
 

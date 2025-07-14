@@ -46,7 +46,7 @@ const HealthProducts = () => {
               className="relative w-[200px] min-w-[200px] bg-white rounded-2xl shadow-md p-4 flex-shrink-0 hover:shadow-xl transition duration-300"
             >
               {/* Discount Badge */}
-              <span className="absolute top-1 left-3 bg-gray-800 text-white text-xs font-semibold px-2 py-0.5 rounded-md shadow-sm">
+              <span className="absolute top-1 left-3 bg-orange-400 text-white text-xs font-semibold px-2 py-0.5 rounded-md shadow-sm">
                 {item.discount}
               </span>
 

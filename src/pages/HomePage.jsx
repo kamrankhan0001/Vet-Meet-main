@@ -13,6 +13,8 @@ import SecondBanner from "../Components/SecondBanner";
 import ToysProducts from "../Components/ToysProducts";
 import OfferPage from "../Components/OfferPage";
 import HenloSection from "../Components/HenloSection";
+import FashionSection from "../Components/FashionSection";
+import OfferCardSection from "../Components/OfferCardSection";
 
 const HomePage = () => {
   
@@ -22,6 +24,8 @@ const HomePage = () => {
       <PetBrands />
       <CategoriesGrid />
       <SecondBanner />
+      <FashionSection />
+      <OfferCardSection />
       <OfferPage />
       <HenloSection />
       <DogBreeds />

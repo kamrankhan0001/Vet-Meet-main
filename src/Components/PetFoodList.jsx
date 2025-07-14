@@ -67,7 +67,7 @@ const PetFoodList = () => {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: index * 0.15 }}
-        className="min-w-[240px] max-w-[260px] bg-white border border-gray-200 rounded-2xl shadow-lg p-4 text-center flex-shrink-0"
+        className="min-w-[240px] max-w-[260px] bg-white border border-gray-300 rounded-2xl shadow-lg p-4 text-center flex-shrink-0"
       >
         <img
           src={item.image}
@@ -78,7 +78,7 @@ const PetFoodList = () => {
         <p className="text-sm font-semibold text-gray-700">{item.title}</p>
         <p className="text-xs text-gray-600 mt-2">{item.description}</p>
         <p className="text-lg font-bold text-gray-800 mt-3">₹{item.price}</p>
-        <button className="mt-4 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-600 transition-all">
+        <button className="mt-4 px-4 py-2 bg-orange-400 text-white rounded-lg hover:bg-orange-500 transition-all">
           Add to Cart
         </button>
       </motion.div>
