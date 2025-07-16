@@ -9,6 +9,8 @@ import product1 from '../assets/Fashion/product1.png';
 import product2 from '../assets/Fashion/product2.png';
 import product3 from '../assets/Fashion/product3.png';
 import product5 from '../assets/Fashion/product5.png';
+import product7 from '../assets/Fashion/product7.png';
+
 
 const FashionSection = () => {
   const navigate = useNavigate();
@@ -44,6 +46,12 @@ const FashionSection = () => {
       title: 'Premium clothing',
       discount: '50% off',
     },
+    {
+      image: product7, 
+      title: 'Frocks',
+      discount: '42% off',
+    },
+    
   ];
 
   return (
@@ -85,36 +93,36 @@ const FashionSection = () => {
 </section>
 
       {/* Product Category Grid */}
-<section className="py-16 px-6 bg-gradient-to-br from-[#fdf6f0] to-[#f3f7fb]">
-  <div className="container mx-auto">
-    
-    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 justify-items-center">
+<section className="py-10 px-4 sm:px-6 bg-gradient-to-br from-[#fdf6f0] to-[#f3f7fb]">
+  <div className="w-full">
+    <h2 className="text-3xl font-extrabold text-center text-gray-800 mb-10">Shop by Fashion Category</h2>
+
+    <div className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth px-2 sm:px-4">
       {fashionCategories.map((category, index) => (
         <div
           key={index}
-          className="flex flex-col items-center bg-white rounded-xl shadow-md w-full max-w-[180px] text-center
-                     transform transition-transform duration-300 hover:scale-[1.06] hover:shadow-2xl hover:border-pink-300 border border-transparent"
+          className="flex-shrink-0 bg-white rounded-2xl shadow-lg w-40 sm:w-48 text-center border-4 border-pink-400 transition-all duration-300 hover:scale-105 group"
         >
           {/* Discount Badge */}
           <div className="relative w-full">
-            <span className="absolute top-2 left-2 bg-gradient-to-r from-orange-400 to-orange-400 text-white text-xs font-bold px-2 py-1 rounded-full z-10 shadow-sm">
+            <span className="absolute top-2 left-2 bg-orange-400 text-white text-xs font-bold px-1 py-0.5 rounded-full shadow-sm z-10">
               {category.discount}
             </span>
 
             {/* Product Image */}
-            <div className="w-full h-32 flex items-center justify-center p-3 bg-white rounded-t-xl">
+            <div className="w-full h-36 flex items-center justify-center p-4 bg-white rounded-t-2xl">
               <img
                 src={category.image}
-                
-                className="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
-                loading='lazy'
+                alt={category.title}
+                className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
               />
             </div>
           </div>
 
           {/* Category Title */}
-          <div className="p-4 w-full">
-            <h3 className="text-sm font-semibold text-gray-800 leading-tight">
+          <div className="p-3">
+            <h3 className="text-sm sm:text-base font-semibold text-gray-800 leading-snug">
               {category.title}
             </h3>
           </div>

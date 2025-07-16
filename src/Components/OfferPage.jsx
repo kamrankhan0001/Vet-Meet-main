@@ -20,7 +20,7 @@ const OfferPage = () => {
   ];
 
   return (
-    <div className="min-h-[300px] bg-gray-100 font-inter py-12">
+    <div className="min-h-[300px] bg-gray-100 font-inter py-10">
       <Helmet>
         <title>Offers - Vet&Meet</title>
         <meta name="description" content="Discover never-seen-before offers on pet products at Vet&Meet." />

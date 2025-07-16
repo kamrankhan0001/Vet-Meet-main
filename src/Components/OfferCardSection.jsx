@@ -84,8 +84,8 @@ const OfferCardSection = () => {
       discount: '5%',
       condition: 'on order above 1000',
       code: 'KENNEL8',
-      bgColor: 'bg-pink-300',
-      textColor: 'text-white',
+      bgColor: 'bg-pink-200',
+      textColor: 'text-black',
     },
     {
       logo: image6,
@@ -115,7 +115,7 @@ const OfferCardSection = () => {
   };
 
   return (
-    <div className="bg-white py-12 font-sans">
+    <div className="bg-white py-4 font-sans">
       <Helmet>
         <title>Offers & Savings - Vet&Meet</title>
         <meta name="description" content="Unlock extra savings with bank offers and brand discounts at Vet&Meet." />
@@ -129,11 +129,11 @@ const OfferCardSection = () => {
         key={index}
         className={`flex items-center gap-3 px-4 py-3 rounded-lg shadow 
                     ${offer.bgColor} ${offer.textColor} 
-                    min-w-[90%] sm:min-w-[300px] md:min-w-[33.33%]`}
+                    min-w-[90%] sm:min-w-[200px] md:min-w-[33.33%]`}
       >
         <img src={offer.logo} alt="Bank Logo" className="w-20 sm:w-24" />
         <div className='ml-10'>
-          {offer.text && <p className="font-bold text-sm sm:text-base">{offer.text}</p>}
+          {offer.text && <p className="font-bold text-sm sm:text-xl">{offer.text}</p>}
           {offer.subText && <p className="text-xs sm:text-sm">{offer.subText}</p>}
         </div>
       </div>
@@ -149,13 +149,13 @@ const OfferCardSection = () => {
 
       {/* Brand Offers Section */}
 <section className="container mx-auto px-4 overflow-x-auto mb-10 scrollbar-hide ml-0 max-w-full">
-  <div className="flex gap-4 w-full">
+  <div className="flex gap-4 w-full max-h-34">
     {brandOffers.map((offer, index) => (
       <div
         key={index}
-        className={`flex items-center rounded-lg shadow-md 
+        className={`flex items-center rounded-xl shadow-md 
                     px-4 py-5 ${offer.bgColor} ${offer.textColor} 
-                    min-w-[90%] sm:min-w-[200px] md:min-w-[33.33%] lg:min-w-[350px]`}
+                    min-w-[90%] sm:min-w-[300px] md:min-w-[33.33%] lg:min-w-[350px]`}
       >
         {/* Logo - Bigger and centered */}
         <div className="flex-shrink-0 w-24 h-24 flex items-center justify-center bg-none rounded-lg p-2">
@@ -167,10 +167,11 @@ const OfferCardSection = () => {
         </div>
 
         {/* Text Info */}
-        <div className="flex flex-col items-end pl-5 flex-1">
+        <div className="flex flex-col items-start pl-20 flex-1">
           {offer.discount && (
             <p className="text-base sm:text-lg font-bold mb-1">
-              Extra <span className="text-2xl">{offer.discount}</span> Off
+             <span>Extra</span> <br />
+              <span className="text-2xl">{offer.discount}</span> Off
             </p>
           )}
           {offer.condition && (
