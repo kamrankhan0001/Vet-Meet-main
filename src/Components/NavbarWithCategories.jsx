@@ -9,6 +9,8 @@ import {
 import LoginWithOTP from "../pages/ProfilePage";
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import DeliveryModal from "./DeliveryModal";
+
 
 
 const categories = [
@@ -265,12 +267,16 @@ const categories = [
 ];
 
 export default function NavbarWithCategories() {
+  const [showDeliveryModal, setShowDeliveryModal] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [showAppointmentModal, setShowAppointmentModal] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [openIndex, setOpenIndex] = useState(null);
   const navigate = useNavigate();
+
+  const toggleDeliveryModal = () => setShowDeliveryModal(!showDeliveryModal); 
+  const [currentDeliveryPincode, setCurrentDeliveryPincode] = useState('Delivery'); // Renamed state and default text
 
   const { getCartTotalItems } = useCart(); // Use the useCart hook to get total items
 
@@ -342,6 +348,14 @@ export default function NavbarWithCategories() {
     }
   };
 
+   // Simplified handler for pincode submission
+  const handlePincodeSubmit = (pincode) => {
+    setCurrentDeliveryPincode(pincode); // Set the entered pincode as the current delivery location
+    toggleDeliveryModal(); // Close the modal
+    console.log("Delivery pincode set to:",pincode);
+    // You could also save this to local storage or a global context here
+  };
+
   return (
     <>
       {/* TOP NAVBAR */}
@@ -398,24 +412,33 @@ export default function NavbarWithCategories() {
             <span>Profile</span>
           </button>
           <button
-            onClick={toggleModal}
+            onClick={toggleDeliveryModal}
             className="flex flex-col items-center text-lg text-white hover:text-black cursor-pointer relative"
           >
             <FaMapMarkerAlt className="text-xl" />
-            <span>Delivery</span>
+            {/* <span>Delivery{currentDeliveryPincode}</span> */}
+            <span className="ml-2 text-lg">
+                  {currentDeliveryPincode ? currentDeliveryPincode : 'Delivery'}
+      </span>
+            
           </button>
-          <a
-            href="tel:+18001026886"
-            className="flex flex-col items-center text-lg text-white hover:text-black"
+          <button
+            onClick={() => {
+              navigate('/contact-us');
+              if (drawerOpen) {
+                setDrawerOpen(false); // Close drawer if open
+              }
+            }}
+            className="flex flex-col items-center text-lg text-white hover:text-black cursor-pointer"
           >
             <FaPhoneAlt className="text-xl" />
             <span>Call</span>
-          </a>
+          </button>
           <button onClick={handleCartClick} className="flex flex-col items-center text-lg text-white hover:text-black relative cursor-pointer">
             <FaShoppingCart className="text-xl" />
             <span>Cart</span>
             <span className="absolute -top-1 -right-2 text-xs bg-red-500 text-white rounded-full px-1">
-              {getCartTotalItems()} {/* Display the total number of items in the cart */}
+              {getCartTotalItems()} 
             </span>
           </button>
         </div>
@@ -512,26 +535,13 @@ export default function NavbarWithCategories() {
         </div>
       </div>
 
-      {/* DELIVERY MODAL */}
-      {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
-          <div className="bg-white p-6 rounded-md w-80">
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-lg font-medium">Enter Pincode</h2>
-              <button onClick={toggleModal} className="text-red-500 text-xl">
-                &times;
-              </button>
-            </div>
-            <input
-              type="number"
-              placeholder="Enter Pincode"
-              className="w-full border border-orange-500 rounded-md px-4 py-2"
-            />
-            <button className="mt-4 w-full bg-orange-500 text-white py-2 rounded-md">
-              Submit
-            </button>
-          </div>
-        </div>
+     
+         {/* DELIVERY MODAL (now a separate component) */}
+      {showDeliveryModal && (
+        <DeliveryModal
+          onClose={toggleDeliveryModal}
+          onSubmitPincode={handlePincodeSubmit}
+        />
       )}
 
 

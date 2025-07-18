@@ -34,6 +34,8 @@ import OfferPage from "./Components/OfferPage";
 import HenloSection from "./Components/HenloSection";
 import FashionSection from "./Components/FashionSection";
 import OfferCardSection from "./Components/OfferCardSection";
+import ContactUsPage from './pages/ContactUs';
+import './firebase';
 
 const allArticles = [
   {
@@ -119,6 +121,8 @@ const App = () => {
           <Route path="/henlo" element={<HenloSection />} />
           <Route path="/fashion" element={<FashionSection />} /> 
           <Route path="/offers-card" element={<OfferCardSection />} />
+
+          <Route path="/contact-us" element={<ContactUsPage />} />
                    
       </Routes>
 

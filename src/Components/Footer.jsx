@@ -58,7 +58,7 @@ const Footer = () => {
             </li>
 
             <li>
-              <a href="#">Contact Us</a>
+              <Link to="/contact-us">Contact Us</Link>
             </li>
             <li>
               <a href="#">Vet&Meet Companion</a>
