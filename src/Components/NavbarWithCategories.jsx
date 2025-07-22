@@ -302,9 +302,9 @@ export default function NavbarWithCategories() {
         // This is for opening the modal directly from a specific sub-category click
         toggleAppointmentModal();
         setDrawerOpen(false);
-      } else if (item.path) { // If a sub-category has a path, navigate there
+      } else if (item.path) { 
         navigate(item.path);
-        setDrawerOpen(false); // Close the drawer after navigation
+        setDrawerOpen(false); 
       } else {
         console.log(`Clicked on object: ${item.name}`);
         setDrawerOpen(false);
@@ -411,6 +411,8 @@ export default function NavbarWithCategories() {
             <FaUser className="text-xl" />
             <span>Profile</span>
           </button>
+
+
           <button
             onClick={toggleDeliveryModal}
             className="flex flex-col items-center text-lg text-white hover:text-black cursor-pointer relative"

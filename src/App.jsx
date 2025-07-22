@@ -34,7 +34,13 @@ import OfferPage from "./Components/OfferPage";
 import HenloSection from "./Components/HenloSection";
 import FashionSection from "./Components/FashionSection";
 import OfferCardSection from "./Components/OfferCardSection";
+import OrderRelated from './pages/OrderRelated';
+import GeneralEnquiryPage from "./pages/GeneralEnquiry";
 import ContactUsPage from './pages/ContactUs';
+import CouponsAndOffersPage from "./pages/CouponsPage";
+import PaymentsAndRefundsPage from "./pages/PaymentAndRefund";
+import ReturnsAndCancellationsPage from "./pages/ReturnAndCancel";
+import DashboardPage from "./pages/DashboardPage";
 import './firebase';
 
 const allArticles = [
@@ -105,6 +111,14 @@ const App = () => {
         <Route path="/our-story" element={<OutStoryPage />} />
         <Route path="/products/dog-food" element={<ProductListingPage />} />
         <Route path="/products/cat-food" element={<CatFoodListingPage />} />
+        <Route path="/help/order" element={<OrderRelated />} />
+        <Route path="/help/general" element={<GeneralEnquiryPage />} />
+        <Route path="/help/coupons" element={<CouponsAndOffersPage />} />
+        <Route path="/help/payments" element={<PaymentsAndRefundsPage />} />
+        <Route path="/help/returns" element={<ReturnsAndCancellationsPage />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
+
+       
         {/* <Route
             path="/consult-a-vet"
             element={<VetAndMeetPage toggleAppointmentModal={toggleAppointmentModal} />}

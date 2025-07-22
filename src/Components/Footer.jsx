@@ -74,7 +74,7 @@ const Footer = () => {
           <h3 className="text-lg sm:text-xl font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="#">My Account</a>
+              <Link to="/contact-us">My Account</Link>
             </li>
             <li>
               

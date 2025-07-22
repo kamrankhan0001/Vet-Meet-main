@@ -38,6 +38,7 @@
 
 
 // // src/firebase.js
+
 // import { initializeApp } from "firebase/app";
 // import { getAuth, RecaptchaVerifier } from "firebase/auth";
 
@@ -55,3 +56,22 @@
 // const auth = getAuth(app);
 
 // export { auth, RecaptchaVerifier };
+
+
+
+// firebase.js
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDxCxACtVK1CPbR_RKCtfndgGuUhjncWtE",
+  authDomain: "vetmeet-18811.firebaseapp.com",
+  projectId: "vetmeet-18811",
+  storageBucket: "vetmeet-18811.firebasestorage.app",
+  messagingSenderId: "208217151612",
+  appId: "1:208217151612:web:96c193b5beb39ca85351f9",
+  measurementId: "G-VWBP43SYEG"
+};
+
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);

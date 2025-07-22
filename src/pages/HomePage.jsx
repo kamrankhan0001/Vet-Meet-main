@@ -35,8 +35,7 @@ const HomePage = () => {
       <ToysProducts />
       <HealthTipsSection />     
       <PetSuppliesSection /> 
-      
-      
+            
     </>
   );
 };

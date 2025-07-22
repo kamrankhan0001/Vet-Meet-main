@@ -1,117 +1,118 @@
-import React, { useState } from 'react';
-import { FaWhatsapp } from 'react-icons/fa'; 
-//import flag from '../assets/Logos/flag.png';
-import flag from '../assets/logos/flag.png';
+// import React, { useState } from 'react';
+// import { FaWhatsapp } from 'react-icons/fa'; 
+// //import flag from '../assets/Logos/flag.png';
+// import flag from '../assets/logos/flag.png';
+
+// const LoginWithOTP = ({ onClose }) => {
+//   const [phoneNumber, setPhoneNumber] = useState('');
+//   const [isRobot, setIsRobot] = useState(false);
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     console.log('Requesting OTP for:', phoneNumber);
+//     console.log('I am not a robot:', isRobot);
+//   };
+
+//   return (
+//     <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-[100] p-4">
+//       <div className="bg-white p-6 sm:p-8 rounded-lg shadow-xl w-full max-w-md relative">
+//         {/* Close Button */}
+//         <button
+//           onClick={onClose}
+//           className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl sm:text-3xl font-light cursor-pointer"
+//           aria-label="Close"
+//         >
+//           &times;
+//         </button>
+
+//         <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-center text-gray-800">Login with OTP</h2>
+//         <p className="text-gray-600 text-sm sm:text-base text-center mb-4 sm:mb-6">Enter your log in details</p>
+
+//         <form onSubmit={handleSubmit}>
+//           <div className="mb-4 sm:mb-6">
+//             <label htmlFor="phone-number" className="sr-only">Phone number</label>
+//             <div className="flex border border-gray-300 rounded-md overflow-hidden focus-within:ring-2 focus-within:ring-orange-500">
+//               <div className="flex items-center bg-gray-100 px-2 sm:px-3 border-r border-gray-300">
+//                 <img
+//                   src={flag} 
+//                   alt="Indian Flag"
+//                   className="h-4 w-6 sm:w-8 mr-1 sm:mr-2"
+//                 />
+//                 <span className="text-gray-700 text-sm sm:text-base">+91</span>
+//               </div>
+//               <input
+//                 type="tel"
+//                 id="phone-number"
+//                 className="w-full p-2 sm:p-3 focus:outline-none text-sm sm:text-base"
+//                 placeholder="Phone number"
+//                 value={phoneNumber}
+//                 onChange={(e) => setPhoneNumber(e.target.value)}
+//                 required
+//               />
+//             </div>
+//           </div>
+
+//           <button
+//             type="submit"
+//             className={`w-full py-2 sm:py-3 rounded-md text-sm sm:text-lg font-semibold transition duration-300 flex items-center justify-center ${
+//               isRobot ? 'bg-red-600 text-white hover:bg-red-700' : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+//             }`}
+//             disabled={!isRobot}
+//           >
+//             Request OTP <span className="ml-2 text-lg sm:text-xl">&rarr;</span>
+//           </button>
+
+//           <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row items-center justify-between bg-gray-200 py-2 px-5 rounded-md space-y-2 sm:space-y-0">
+//             <div className="flex items-center">
+//               <input
+//                 type="checkbox"
+//                 id="i-am-not-robot"
+//                 className="form-checkbox h-5 w-5 text-blue-600 rounded-md focus:ring-blue-500"
+//                 checked={isRobot}
+//                 onChange={(e) => setIsRobot(e.target.checked)}
+//               />
+//               <label htmlFor="i-am-not-robot" className="ml-2 text-gray-700 text-sm">I'm not a robot</label>
+//             </div>
+//             <div className="flex flex-col items-end text-xs text-gray-500">
+//               <div className="flex items-center">
+//                 <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA" className="h-8 w-8 mr-1" />
+//                 <span>reCAPTCHA</span>
+//               </div>
+//               <div className="mt-1">
+//                 <span className="underline mr-1">Privacy</span> - <span className="underline ml-1">Terms</span>
+//               </div>
+//             </div>
+//           </div>
+
+//           <div className="relative flex items-center justify-center my-6 sm:my-8">
+//             <div className="flex-grow border-t border-gray-300"></div>
+//             <span className="flex-shrink mx-2 text-gray-500 text-sm">Or Login Using</span>
+//             <div className="flex-grow border-t border-gray-300"></div>
+//           </div>
+
+//           <button
+//             type="button"
+//             className="w-full bg-green-500 text-white py-2 sm:py-3 rounded-md text-sm sm:text-lg font-semibold hover:bg-green-600 transition duration-300 flex items-center justify-center"
+//           >
+//             <FaWhatsapp className="mr-2 text-xl" /> WhatsApp
+//           </button>
+
+//           <p className="text-center text-gray-500 text-xs mt-4 sm:mt-6">
+//             I accept that I have read & understood
+//             <br />
+//             <span className="underline cursor-pointer">Privacy Policy</span> and <span className="underline cursor-pointer">T&Cs</span>.
+//           </p>
+//         </form>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default LoginWithOTP;
 
 
 
 
-const LoginWithOTP = ({ onClose }) => {
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [isRobot, setIsRobot] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Requesting OTP for:', phoneNumber);
-    console.log('I am not a robot:', isRobot);
-  };
-
-  return (
-    <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-[100] p-4">
-      <div className="bg-white p-6 sm:p-8 rounded-lg shadow-xl w-full max-w-md relative">
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl sm:text-3xl font-light cursor-pointer"
-          aria-label="Close"
-        >
-          &times;
-        </button>
-
-        <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-center text-gray-800">Login with OTP</h2>
-        <p className="text-gray-600 text-sm sm:text-base text-center mb-4 sm:mb-6">Enter your log in details</p>
-
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4 sm:mb-6">
-            <label htmlFor="phone-number" className="sr-only">Phone number</label>
-            <div className="flex border border-gray-300 rounded-md overflow-hidden focus-within:ring-2 focus-within:ring-orange-500">
-              <div className="flex items-center bg-gray-100 px-2 sm:px-3 border-r border-gray-300">
-                <img
-                  src={flag} 
-                  alt="Indian Flag"
-                  className="h-4 w-6 sm:w-8 mr-1 sm:mr-2"
-                />
-                <span className="text-gray-700 text-sm sm:text-base">+91</span>
-              </div>
-              <input
-                type="tel"
-                id="phone-number"
-                className="w-full p-2 sm:p-3 focus:outline-none text-sm sm:text-base"
-                placeholder="Phone number"
-                value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value)}
-                required
-              />
-            </div>
-          </div>
-
-          <button
-            type="submit"
-            className={`w-full py-2 sm:py-3 rounded-md text-sm sm:text-lg font-semibold transition duration-300 flex items-center justify-center ${
-              isRobot ? 'bg-red-600 text-white hover:bg-red-700' : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-            }`}
-            disabled={!isRobot}
-          >
-            Request OTP <span className="ml-2 text-lg sm:text-xl">&rarr;</span>
-          </button>
-
-          <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row items-center justify-between bg-gray-200 py-2 px-5 rounded-md space-y-2 sm:space-y-0">
-            <div className="flex items-center">
-              <input
-                type="checkbox"
-                id="i-am-not-robot"
-                className="form-checkbox h-5 w-5 text-blue-600 rounded-md focus:ring-blue-500"
-                checked={isRobot}
-                onChange={(e) => setIsRobot(e.target.checked)}
-              />
-              <label htmlFor="i-am-not-robot" className="ml-2 text-gray-700 text-sm">I'm not a robot</label>
-            </div>
-            <div className="flex flex-col items-end text-xs text-gray-500">
-              <div className="flex items-center">
-                <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA" className="h-8 w-8 mr-1" />
-                <span>reCAPTCHA</span>
-              </div>
-              <div className="mt-1">
-                <span className="underline mr-1">Privacy</span> - <span className="underline ml-1">Terms</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="relative flex items-center justify-center my-6 sm:my-8">
-            <div className="flex-grow border-t border-gray-300"></div>
-            <span className="flex-shrink mx-2 text-gray-500 text-sm">Or Login Using</span>
-            <div className="flex-grow border-t border-gray-300"></div>
-          </div>
-
-          <button
-            type="button"
-            className="w-full bg-green-500 text-white py-2 sm:py-3 rounded-md text-sm sm:text-lg font-semibold hover:bg-green-600 transition duration-300 flex items-center justify-center"
-          >
-            <FaWhatsapp className="mr-2 text-xl" /> WhatsApp
-          </button>
-
-          <p className="text-center text-gray-500 text-xs mt-4 sm:mt-6">
-            I accept that I have read & understood
-            <br />
-            <span className="underline cursor-pointer">Privacy Policy</span> and <span className="underline cursor-pointer">T&Cs</span>.
-          </p>
-        </form>
-      </div>
-    </div>
-  );
-};
-
-export default LoginWithOTP;
 
 
 // // src/pages/ProfilePage.jsx (or LoginWithOTP.jsx)
@@ -512,3 +513,133 @@ export default LoginWithOTP;
 // };
 
 // export default LoginWithOTP;
+
+
+
+
+// src/pages/ProfilePage.jsx (formerly LoginWithOTP.jsx)
+import React, { useState } from 'react';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { auth } from '../firebase'; // Adjust path as needed
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for redirection
+
+const LoginWithOTP = ({ onClose }) => { // Renamed AuthForm to LoginWithOTP
+  const [isSignup, setIsSignup] = useState(false);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  const toggleForm = () => {
+    setIsSignup(!isSignup);
+    setError('');
+    setName('');
+    setEmail('');
+    setPassword('');
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+    setLoading(true);
+
+    try {
+      if (isSignup) {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        if (name) {
+          await updateProfile(userCredential.user, { displayName: name });
+        }
+        alert('Signup successful!'); 
+        
+      } else {
+        await signInWithEmailAndPassword(auth, email, password);
+        alert('Login successful!'); // Replace with custom modal
+      }
+      onClose(); // Close modal after success
+      navigate('/dashboard'); // Redirect to dashboard after successful login/signup
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-[100] p-4">
+      <div className="bg-white p-6 sm:p-8 rounded-lg shadow-xl w-full max-w-md relative">
+        <button
+          onClick={onClose}
+          className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-3xl"
+          aria-label="Close"
+        >
+          &times;
+        </button>
+
+        <h2 className="text-2xl font-bold mb-4 text-center text-gray-800">
+          {isSignup ? 'Sign Up' : 'Login'}
+        </h2>
+
+        <form onSubmit={handleSubmit}>
+          {isSignup && (
+            <div className="mb-4">
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Full Name"
+                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                required
+              />
+            </div>
+          )}
+
+          <div className="mb-4">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
+              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+              required
+            />
+          </div>
+
+          <div className="mb-6">
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+              required
+            />
+          </div>
+
+          <button
+            type="submit"
+            className={`w-full ${isSignup ? 'bg-orange-600' : 'bg-green-600'} text-white py-3 rounded-md font-semibold hover:opacity-90 transition`}
+            disabled={loading}
+          >
+            {loading ? (isSignup ? 'Signing Up...' : 'Logging In...') : isSignup ? 'Sign Up' : 'Login'}
+          </button>
+        </form>
+
+        {error && <p className="text-red-500 mt-4 text-center text-sm">{error}</p>}
+
+        <p className="mt-6 text-sm text-center text-gray-600">
+          {isSignup ? 'Already have an account?' : "Don't have an account?"}{' '}
+          <button
+            onClick={toggleForm}
+            className="text-blue-600 font-semibold hover:underline ml-1"
+          >
+            {isSignup ? 'Login' : 'Sign Up'}
+          </button>
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default LoginWithOTP;

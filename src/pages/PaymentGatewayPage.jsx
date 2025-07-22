@@ -98,10 +98,10 @@ const PaymentGatewayPage = () => {
         },
         notes: {
           address: `${formData.address}, ${formData.apartment}, ${formData.city}, ${formData.state}, ${formData.pincode}`,
-          order_id: `ORDER_${Date.now()}`, // Unique order ID
+          order_id: `ORDER_${Date.now()}`, 
         },
         theme: {
-          color: "#FFA500", // Orange color for the theme
+          color: "#FFA500", 
         },
       };
 
@@ -237,15 +237,17 @@ const PaymentGatewayPage = () => {
                 onChange={handleChange}
               />
               <input
-                type='text'
-                name="State"
-                placeholder="State"
-                className="block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-orange-500 focus:border-orange-500"
-                value={formData.state}
-                onChange={handleChange}
-              >
+              
+  type='text'
+  name="state" 
+  placeholder="State"
+  className="block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-orange-500 focus:border-orange-500"
+  value={formData.state}
+  onChange={handleChange}
+/>
+
                 
-              </input>
+              
               <input
                 type="text"
                 name="pincode"
