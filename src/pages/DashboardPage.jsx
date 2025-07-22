@@ -17,10 +17,10 @@ import {
 } from 'react-icons/fa';
 import { FiChevronRight } from 'react-icons/fi';
 
-import OrdersSection from '../components/dashboard/OrdersSection';
-import InviteFriendsSection from '../components/dashboard/InviteFriendsSection';
+import OrdersSection from '../Components/dashboard/OrdersSection';
+import InviteFriendsSection from '../Components/dashboard/InviteFriendsSection';
 import AccountSettingsSection from '../Components/dashboard/AccountSection';
-import AddAddressModal from '../components/dashboard/AddAddressModal';
+import AddAddressModal from '../Components/dashboard/AddAddressModal';
 
 const DashboardPage = () => {
   const navigate = useNavigate();
